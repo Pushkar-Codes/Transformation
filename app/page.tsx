@@ -121,7 +121,7 @@ export default function Page({ loading }: { loading?: boolean }) {
           "IoT Innovations",
           "AR/VR Showcase",
           "Data Science Challenge",
-          "Tech Start-up Pitch",
+          "Tech StartUp Pitch",
         ].map((event, i) => (
           <p
             key={i}
