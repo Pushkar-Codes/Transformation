@@ -24,3 +24,17 @@
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+/* h1,
+h2,
+h3 {
+  font-family: "Edu NSW ACT Cursive", cursive, sans-serif;
+} */
+
+/* Initially hide and offset the sub-content */
+.relative.z-10 > p,
+.relative.z-10 > a,
+.absolute.text-right > p {
+  opacity: 0;
+  transform: translateY(20px);
+}
