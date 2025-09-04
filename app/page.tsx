@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import DemoAnimation from "@/lib/gsap";
 
-export default function Home({ loading }: { loading: boolean }) {
+export default function Page({ loading }: { loading?: boolean }) {
   const textRef = useRef<HTMLHeadingElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -13,7 +13,7 @@ export default function Home({ loading }: { loading: boolean }) {
     }
   }, [loading]);
 
-  // Delay video start by 5 seconds
+  // Delay video start by 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       if (videoRef.current) {
@@ -121,7 +121,7 @@ export default function Home({ loading }: { loading: boolean }) {
           "IoT Innovations",
           "AR/VR Showcase",
           "Data Science Challenge",
-          "Tech Start-up Pitch",
+          "Tech StartUp Pitch",
         ].map((event, i) => (
           <p
             key={i}
