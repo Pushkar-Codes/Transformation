@@ -5,7 +5,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
 
   const container = element.parentElement; // wrapper div holding title + p above
 
-  const timeline = gsap.timeline({ delay: 3 });
+  const timeline = gsap.timeline({ delay: 1 });
 
   // Animate the paragraph above the title
   if (container) {
