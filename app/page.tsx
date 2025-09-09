@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import DemoAnimation from "@/lib/gsap";
+import Image from "next/image";
 
 export default function Page() {
   const [loading, setLoading] = useState(true);
@@ -66,10 +67,12 @@ export default function Page() {
 
       {/* University Logo (Top-Left) */}
       <div className="absolute top-4 left-2 lg:top-6 lg:left-8 z-20 lg:px-6">
-        <div className="bg-white/60 backdrop-blur-md rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
-          <img
+        <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
+          <Image
             src="/srmus-logo-full-length.png"
             alt="SRM University Logo"
+            width={1000}
+            height={100}
             className="h-6 lg:h-12 w-auto object-contain"
           />
         </div>
@@ -158,7 +161,7 @@ export default function Page() {
           href="#innovators-expo"
           className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
         >
-          INNOVATOR'S EXPO
+          INNOVATOR&apos;S EXPO
         </a>
         <a
           href="#quiz"
