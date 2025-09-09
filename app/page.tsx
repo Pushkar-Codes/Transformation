@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import DemoAnimation from "@/lib/gsap";
+import Image from "next/image";
 
 export default function Page() {
   const [loading, setLoading] = useState(true);
@@ -66,17 +67,19 @@ export default function Page() {
 
       {/* University Logo (Top-Left) */}
       <div className="absolute top-4 left-2 lg:top-6 lg:left-8 z-20 lg:px-6">
-        <div className="bg-white/60 backdrop-blur-md rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
-          <img
+        <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
+          <Image
             src="/srmus-logo-full-length.png"
             alt="SRM University Logo"
+            width={1000}
+            height={100}
             className="h-6 lg:h-12 w-auto object-contain"
           />
         </div>
       </div>
 
       {/* Main left-aligned content */}
-      <div className="relative z-10 -mt-[70px] leading-snug lg:mt-0 flex flex-col items-start text-left h-full justify-center max-w-full lg:max-w-3xl space-y-2.5 lg:space-y-3 px-1 lg:px-0">
+      <div className="relative z-10 -mt-[90px] leading-snug lg:mt-0 flex flex-col items-start text-left h-full justify-center max-w-full lg:max-w-3xl space-y-2.5 lg:space-y-3 px-1 lg:px-0">
         <div>
           <p className="mb-0 pb-0 font-semibold text-xl text-orange-500 leading-none">
             2025
@@ -97,16 +100,18 @@ export default function Page() {
         </div>
 
         {/* Organised by */}
-        <p className="text-lg lg:text-2xl font-semibold leading-snug">
+        <p className="text-md lg:text-2xl font-semibold leading-snug">
           Organised by{" "}
           <span className="text-white">School of Information & Technology</span>
         </p>
 
         {/* University name with glass effect */}
         <div className="flex space-x-2 justify-center items-center">
-          <p className="text-base lg:text-xl font-light italic opacity-90 bg-white/10 backdrop-blur-md rounded-md border border-white/20 px-2 lg:px-3 py-1 leading-relaxed">
-            SRM University Sikkim
-          </p>
+          <a href="https://srmus.ac.in">
+            <p className="text-base lg:text-xl font-light italic opacity-90 bg-white/10 backdrop-blur-md rounded-md border border-white/20 px-2 lg:px-3 py-1 leading-relaxed">
+              SRM University Sikkim
+            </p>
+          </a>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +128,7 @@ export default function Page() {
 
         <button className="mt-2 transition-transform duration-300 hover:scale-105">
           <a
-            href="#register"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
             className="mt-3 lg:mt-4 px-6 lg:px-8 py-2 lg:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-base lg:text-lg relative overflow-hidden"
           >
             <span className="relative z-10 transition-transform duration-300 hover:scale-110">
@@ -139,27 +144,53 @@ export default function Page() {
       </div>
 
       {/* Event list bottom-right with glass effect */}
-      <div className="absolute bottom-14 lg:bottom-18 right-2 lg:right-6 z-10 text-sm lg:px-14 lg:text-base space-y-1 lg:space-y-2 text-right">
-        {[
-          "CODING CHALLANGE",
-          "IDEATHON",
-          "INNOVATOR'S EXPO",
-          "QUIZ",
-          "FUNZONE GAMING",
-          "YOUTH PARLIAMENT",
-          "TECH TREASURE HUNT",
-        ].map((event, i) => (
-          <p
-            key={i}
-            className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1"
-          >
-            {event}
-          </p>
-        ))}
+      <div className="absolute bottom-14 lg:bottom-18 right-3 lg:right-6 z-10 text-sm lg:px-14 lg:text-base space-y-1 lg:space-y-2 text-right">
+        <a
+          href="#coding-challenge"
+          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
+        >
+          CODING CHALLENGE
+        </a>
+        <a
+          href="#ideathon"
+          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
+        >
+          IDEATHON
+        </a>
+        <a
+          href="#innovators-expo"
+          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
+        >
+          INNOVATOR&apos;S EXPO
+        </a>
+        <a
+          href="#quiz"
+          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
+        >
+          QUIZ
+        </a>
+        <a
+          href="#funzone-gaming"
+          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
+        >
+          FUNZONE GAMING
+        </a>
+        <a
+          href="#youth-parliament"
+          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
+        >
+          YOUTH PARLIAMENT
+        </a>
+        <a
+          href="#tech-treasure-hunt"
+          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
+        >
+          TECH TREASURE HUNT
+        </a>
       </div>
 
       {/* Footer */}
-      <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm lg:text-left px-2 lg:px-16 py-2 text-xs lg:text-sm border-t border-white/10 z-10">
+      <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm lg:text-left px-4 lg:px-16 py-2 text-xs lg:text-sm border-t border-white/10 z-10">
         © 2025 SRM University Sikkim. All rights reserved.
       </footer>
     </div>

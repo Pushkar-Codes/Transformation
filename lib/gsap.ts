@@ -70,19 +70,21 @@ export default function DemoAnimation(element: HTMLElement | null) {
   }
 
   // Animate event list items sliding in from left to right as a stack
-  const eventListItems = document.querySelectorAll(".absolute.bottom-14 p");
-  gsap.set(eventListItems, { x: -50, autoAlpha: 0 });
-  gsap.to(eventListItems, {
+  const eventListLinks = document.querySelectorAll(
+    ".absolute.bottom-14 a, .absolute.lg\\:bottom-18 a"
+  );
+  gsap.set(eventListLinks, { x: -50, autoAlpha: 0 });
+  gsap.to(eventListLinks, {
     x: 0,
     autoAlpha: 0.9,
     duration: 0.6,
     stagger: 0.1,
     ease: "power3.out",
-    delay: 3.3,
+    delay: 2.2,
   });
 
-  // GSAP hover effects for event list items
-  eventListItems.forEach((item) => {
+  // GSAP hover effects for event list links
+  eventListLinks.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       gsap.to(item, {
         scale: 1.1,
