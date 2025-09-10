@@ -2,10 +2,11 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { useState, useEffect } from "react";
-import LoadingScreen from "@/components/loading-screen"; // your Lottie loader
+// import { LoadingProvider, LoadingContext } from "@/context/LoadingContext";
+import { LoadingProvider, LoadingContext } from "./context/LoadingContext";
+import LoadingScreen from "@/components/loading-screen";
+import { useContext } from "react";
 
-// Fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,45 +17,44 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000); // match loader duration
-    return () => clearTimeout(timer);
-  }, []);
+// We create a new component to consume the context
+function AppContent({ children }: { children: React.ReactNode }) {
+  const { isLoading } = useContext(LoadingContext);
 
   return (
     <html lang="en">
       <head>
         <title>Transformation</title>
         <meta name="Pushkar Dutta" content="pushkardutta.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
+        {/* Loading screen with fade-out based on context */}
+        {isLoading && <LoadingScreen />}
+
+        {/* Main content with fade-in based on context */}
         <main
           className={`transition-opacity duration-700 ${
-            loading ? "opacity-0" : "opacity-100"
+            isLoading ? "opacity-0" : "opacity-100"
           }`}
         >
           {children}
         </main>
       </body>
     </html>
+  );
+}
+
+// The main RootLayout now just provides the context
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <LoadingProvider>
+      <AppContent>{children}</AppContent>
+    </LoadingProvider>
   );
 }

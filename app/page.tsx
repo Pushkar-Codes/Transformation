@@ -1,42 +1,28 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useContext } from "react";
 import DemoAnimation from "@/lib/gsap";
 import Image from "next/image";
+import { LoadingContext } from "./context/LoadingContext"; // Import the context
 
 export default function Page() {
-  const [loading, setLoading] = useState(true);
   const textRef = useRef<HTMLHeadingElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { isLoading } = useContext(LoadingContext); // Consume the context
 
-  // Simulate loading (e.g., data fetch or any initial tasks)
+  // This useEffect now depends on 'isLoading'
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Trigger video play and animation after loading ends
-  useEffect(() => {
-    if (!loading && videoRef.current) {
-      videoRef.current
-        .play()
-        .then(() => {
-          if (textRef.current) DemoAnimation(textRef.current);
-        })
-        .catch((err) => {
+    // Only run the animations when loading is finished
+    if (!isLoading) {
+      if (videoRef.current) {
+        videoRef.current.play().catch((err) => {
           console.log("Autoplay prevented:", err);
-          // Optionally trigger animation anyway on error or wait for user interaction
-          if (textRef.current) DemoAnimation(textRef.current);
         });
+      }
+      if (textRef.current) {
+        DemoAnimation(textRef.current);
+      }
     }
-  }, [loading]);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen text-white">
-        Loading...
-      </div>
-    );
-  }
+  }, [isLoading]); // The effect will re-run when isLoading changes
 
   return (
     <div className="relative w-full h-screen overflow-hidden text-white px-3 lg:px-16">
@@ -48,6 +34,7 @@ export default function Page() {
         muted
         playsInline
         preload="auto"
+        poster="/poster-sm.png"
       >
         <source
           src="/bg-large.mp4"
@@ -62,6 +49,7 @@ export default function Page() {
         Your browser does not support the video tag.
       </video>
 
+      {/* The rest of your JSX remains the same... */}
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
@@ -88,12 +76,13 @@ export default function Page() {
           <h1
             ref={textRef}
             className="
-              text-3xl lg:text-8xl mt-0 mb-0
-              font-extrabold uppercase tracking-widest
-              text-white
-              drop-shadow-[0_0_20px_rgba(192,132,252,0.7)]
-              leading-[1.05]
-            "
+    text-3xl lg:text-8xl mt-0 mb-0
+    font-extrabold uppercase tracking-widest
+    text-white
+    drop-shadow-[0_0_20px_rgba(192,132,252,0.7)]
+    leading-[1.05]
+    will-change-transform-filter /* <-- ADD THIS CLASS */
+  "
           >
             TRANSFORMATION
           </h1>
