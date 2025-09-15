@@ -3,11 +3,11 @@ import gsap from "gsap";
 export default function DemoAnimation(element: HTMLElement | null) {
   if (!element) return;
 
-  const container = element.parentElement; // wrapper div holding title + p above
+  const container = element.parentElement;
 
   const timeline = gsap.timeline({ delay: 1 });
 
-  // Animate the paragraph above the title
+  // animate the paragraph above the title
   if (container) {
     const paragraph = container.querySelector("p");
     if (paragraph) {
@@ -19,7 +19,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
     }
   }
 
-  // Flip animation for the main title (h1)
+  // animation for the main title (h1)
   timeline.fromTo(
     element,
     {
@@ -35,7 +35,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
       duration: 1,
       ease: "back.out(1.7)",
       onComplete: () => {
-        // Infinite pulse animation of glow
+        // infinite pulse animation of glow
         gsap.to(element, {
           filter: "blur(0px) drop-shadow(0 0 10px rgba(192,132,252,0.8))",
           duration: 1.5,
@@ -48,7 +48,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
     "-=0.4"
   );
 
-  // Animate the following siblings (sub-content below title)
+  // animating the following siblings here (sub-content below title)
   if (container) {
     const siblings: HTMLElement[] = [];
     let next = container.nextElementSibling as HTMLElement | null;
@@ -69,7 +69,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
     );
   }
 
-  // Animate event list items sliding in from left to right as a stack
+  // event stack
   const eventListLinks = document.querySelectorAll(
     ".absolute.bottom-14 a, .absolute.lg\\:bottom-18 a"
   );
