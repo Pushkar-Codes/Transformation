@@ -34,24 +34,22 @@ h3 {
   font-family: "Edu NSW ACT Cursive", cursive, sans-serif;
 } */
 
-/* Initially hide and offset the sub-content */
+/* initially hide and offset the sub-content */
 .relative.z-10 > p,
 .relative.z-10 > a,
 .absolute.text-right > p {
   opacity: 0;
   transform: translateY(20px);
 }
-/* In globals.css */
 
-/* Set the default poster (background) for the video element */
 video[poster] {
-  object-fit: cover; /* Ensures the poster image covers the element */
+  object-fit: cover;
   background-image: url("/poster-sm.png");
   background-size: cover;
   background-position: center;
 }
 
-/* On larger screens, switch to the large poster */
+/*  switch to the large poster */
 @media (min-width: 1024px) {
   video[poster] {
     background-image: url("/poster-lg.png");

@@ -17,7 +17,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// We create a new component to consume the context
 function AppContent({ children }: { children: React.ReactNode }) {
   const { isLoading } = useContext(LoadingContext);
 
@@ -30,10 +29,8 @@ function AppContent({ children }: { children: React.ReactNode }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Loading screen with fade-out based on context */}
         {isLoading && <LoadingScreen />}
 
-        {/* Main content with fade-in based on context */}
         <main
           className={`transition-opacity duration-700 ${
             isLoading ? "opacity-0" : "opacity-100"
@@ -46,7 +43,6 @@ function AppContent({ children }: { children: React.ReactNode }) {
   );
 }
 
-// The main RootLayout now just provides the context
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import animationData from "@/public/loading.json"; // Import JSON
+import animationData from "@/public/loading.json";
 
 export default function LoadingScreen() {
   return (
