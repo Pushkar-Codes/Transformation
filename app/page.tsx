@@ -50,14 +50,26 @@ export default function Page() {
       <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
       {/* logo */}
-      <div className="absolute top-4 left-2 lg:top-6 lg:left-8 z-20 lg:px-6">
-        <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
+      <div className="fixed flex flex-col lg:flex-row lg:space-x-10 lg:justify-between lg:items-center top-4 left-4 right-4 z-20 px-1 py-3 lg:px-12">
+        {/* SRM Logo Container */}
+        <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg mb-4 lg:mb-0">
           <Image
             src="/srmus-logo-full-length.png"
             alt="SRM University Logo"
             width={1000}
             height={100}
             className="h-6 lg:h-12 w-auto object-contain"
+          />
+        </div>
+
+        {/* NAAC Logo  */}
+        <div className="mb-4 lg:mb-0">
+          <Image
+            src="/NAAC_no_bg.png"
+            alt="NAAC Logo"
+            width={1000}
+            height={100}
+            className="h-10 lg:h-16 w-auto object-contain rounded-lg"
           />
         </div>
       </div>
