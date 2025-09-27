@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import DemoAnimation from "@/lib/gsap";
 import Image from "next/image";
 import { LoadingContext } from "./context/LoadingContext";

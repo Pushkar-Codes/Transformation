@@ -1,8 +1,8 @@
-
+"use client";
 
 import Image from "next/image";
 import { useRef, useEffect, useContext } from "react";
-import { LoadingContext } from "../context/LoadingContext"; 
+import { LoadingContext } from "../context/LoadingContext";
 
 export default function CodingChallengePage() {
   const textRef = useRef<HTMLHeadingElement | null>(null);
@@ -11,8 +11,9 @@ export default function CodingChallengePage() {
 
   useEffect(() => {
     if (!isLoading) {
-      videoRef.current?.play().catch((err) => console.log("Autoplay prevented:", err));
-     
+      videoRef.current
+        ?.play()
+        .catch((err) => console.log("Autoplay prevented:", err));
     }
   }, [isLoading]);
 
@@ -28,8 +29,16 @@ export default function CodingChallengePage() {
         preload="auto"
         poster="/poster-sm.png"
       >
-        <source src="/bg-large.mp4" type="video/mp4" media="(min-width: 1024px)" />
-        <source src="/bg-small.mp4" type="video/mp4" media="(max-width: 1023px)" />
+        <source
+          src="/bg-large.mp4"
+          type="video/mp4"
+          media="(min-width: 1024px)"
+        />
+        <source
+          src="/bg-small.mp4"
+          type="video/mp4"
+          media="(max-width: 1023px)"
+        />
         Your browser does not support the video tag.
       </video>
 
@@ -80,7 +89,9 @@ export default function CodingChallengePage() {
           <div className="bg-gray-800/80 rounded-2xl p-6 shadow-lg text-center">
             <span className="text-3xl">🎓</span>
             <h3 className="text-xl font-bold mt-2">WHO?</h3>
-            <p className="mt-1 text-gray-300">Any School and College Student !!</p>
+            <p className="mt-1 text-gray-300">
+              Any School and College Student !!
+            </p>
           </div>
           <div className="bg-gray-800/80 rounded-2xl p-6 shadow-lg text-center">
             <span className="text-3xl">📍</span>
@@ -94,8 +105,8 @@ export default function CodingChallengePage() {
         </div>
 
         <p className="max-w-2xl text-center text-gray-300 mb-12 leading-relaxed">
-          Join the Coding Challenge 2025 and test your programming skills against
-          real-world problems. Compete with fellow coders, showcase your
+          Join the Coding Challenge 2025 and test your programming skills
+          against real-world problems. Compete with fellow coders, showcase your
           creativity, and win exciting TROPHY.
         </p>
 
