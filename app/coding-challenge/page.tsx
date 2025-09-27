@@ -1,4 +1,4 @@
-"use client";
+
 
 import Image from "next/image";
 import { useRef, useEffect, useContext } from "react";
@@ -12,11 +12,13 @@ export default function CodingChallengePage() {
   useEffect(() => {
     if (!isLoading) {
       videoRef.current?.play().catch((err) => console.log("Autoplay prevented:", err));
+     
     }
   }, [isLoading]);
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden text-white px-3 lg:px-16">
+      {/* Background video */}
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover -z-10"
@@ -33,6 +35,7 @@ export default function CodingChallengePage() {
 
       <div className="absolute inset-0 bg-black/60 -z-10" />
 
+      {/* Page content */}
       <div className="flex flex-col items-center relative z-10 py-10">
         <header className="mb-10 flex justify-center w-full">
           <div className="bg-white/60 rounded-lg border border-white/30 p-3 lg:p-5 shadow-lg">
@@ -93,7 +96,7 @@ export default function CodingChallengePage() {
         <p className="max-w-2xl text-center text-gray-300 mb-12 leading-relaxed">
           Join the Coding Challenge 2025 and test your programming skills against
           real-world problems. Compete with fellow coders, showcase your
-          creativity, and win exciting prizes.
+          creativity, and win exciting TROPHY.
         </p>
 
         <footer className="text-center border-t border-gray-700 pt-6 w-full">
