@@ -1,191 +1,394 @@
 "use client";
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext, useState } from "react";
 import DemoAnimation from "@/lib/gsap";
 import Image from "next/image";
 import { LoadingContext } from "./context/LoadingContext";
+import Link from "next/link";
+
+const EVENTS = [
+	{ href: "/coding-challenge", text: "CODING CHALLENGE" },
+	{ href: "/ideathon", text: "IDEATHON" },
+	{ href: "/innovators-expo", text: "INNOVATOR'S EXPO" },
+	{ href: "/quiz", text: "QUIZ SHOW" },
+	{ href: "/funzone-gaming", text: "FUNZONE GAMING" },
+	{ href: "/youth-parliament", text: "YOUTH PARLIAMENT" },
+	{ href: "/tech-treasure-hunt", text: "TECH TREASURE HUNT" },
+];
 
 export default function Page() {
-  const textRef = useRef<HTMLHeadingElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const { isLoading } = useContext(LoadingContext);
+	const textRef = useRef<HTMLHeadingElement>(null);
+	const videoRef = useRef<HTMLVideoElement>(null);
+	const headerRef = useRef<HTMLDivElement>(null);
+	const { isLoading } = useContext(LoadingContext);
+	const [showEvents, setShowEvents] = useState(false);
 
-  useEffect(() => {
-    if (!isLoading) {
-      if (videoRef.current) {
-        videoRef.current.play().catch((err) => {
-          console.log("Autoplay prevented:", err);
-        });
-      }
-      if (textRef.current) {
-        DemoAnimation(textRef.current);
-      }
-    }
-  }, [isLoading]);
+	// Hide header on scroll
+	useEffect(() => {
+		let lastScroll = 0;
+		const handleScroll = () => {
+			const currentScroll = window.scrollY;
+			if (headerRef.current) {
+				if (currentScroll > 80 && currentScroll > lastScroll) {
+					headerRef.current.style.transform = "translateY(-100%)";
+				} else {
+					headerRef.current.style.transform = "translateY(0)";
+				}
+			}
+			lastScroll = currentScroll;
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
-  return (
-    <div className="relative w-full h-screen overflow-hidden text-white px-3 lg:px-16">
-      {/* bg video */}
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover -z-10"
-        loop
-        muted
-        playsInline
-        preload="auto"
-        poster="/poster-sm.png"
+	useEffect(() => {
+		if (!isLoading) {
+			if (videoRef.current) {
+				videoRef.current.play().catch((err) => {
+					console.log("Autoplay prevented:", err);
+				});
+			}
+			if (textRef.current) {
+				DemoAnimation(textRef.current);
+			}
+		}
+	}, [isLoading]);
+
+	return (
+		<div className="relative w-full min-h-screen overflow-x-hidden text-white px-0 flex flex-col">
+			{/* bg video */}
+			<video
+				ref={videoRef}
+				className="fixed inset-0 w-full h-full object-cover -z-10"
+				loop
+				muted
+				playsInline
+				preload="auto"
+				poster="/poster-sm.png"
+			>
+				<source
+					src="/bg-large.mp4"
+					type="video/mp4"
+					media="(min-width: 1024px)"
+				/>
+				<source
+					src="/bg-small.mp4"
+					type="video/mp4"
+					media="(max-width: 1023px)"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<div className="fixed inset-0 bg-black/70 -z-10"></div>
+
+			{/* Header */}
+<header
+	ref={headerRef}
+	className="w-full fixed top-0 left-0 z-20 px-4 py-3 bg-white/10 backdrop-blur-lg shadow-lg border-b border-white/20 transition-transform duration-300"
+>
+	<div className="flex flex-col md:flex-row items-center md:justify-between w-full gap-3 md:gap-0">
+		{/* SRM Logo */}
+		<div className="flex-shrink-0 bg-white/20 backdrop-blur-lg rounded-xl shadow-lg px-3 py-2">
+			<Image
+				src="/srmus-logo-full-length.png"
+				alt="SRM University Logo"
+				width={1000}
+				height={200}
+				className="h-12 md:h-16 w-auto object-contain drop-shadow"
+				priority
+			/>
+		</div>
+
+		{/* Navigation */}
+		<nav className="flex flex-wrap gap-2 lg:gap-6 justify-center md:justify-start flex-1">
+			<Link
+				href="/"
+				className="px-4 py-2 rounded-full hover:bg-cyan-400/20 hover:text-cyan-300 transition-colors duration-200 font-medium text-sm md:text-base"
+			>
+				Home
+			</Link>
+			<a
+				href="#about"
+				className="px-4 py-2 rounded-full hover:bg-cyan-400/20 hover:text-cyan-300 transition-colors duration-200 font-medium text-sm md:text-base"
+				onClick={(e) => {
+					e.preventDefault();
+					const about = document.getElementById("about");
+					if (about) {
+						const y = about.getBoundingClientRect().top + window.scrollY - 80;
+						window.scrollTo({ top: y, behavior: "smooth" });
+					}
+				}}
+			>
+				About
+			</a>
+			<a
+				href="#events"
+				className="px-4 py-2 rounded-full hover:bg-cyan-400/20 hover:text-cyan-300 transition-colors duration-200 font-medium text-sm md:text-base"
+				onClick={(e) => {
+					e.preventDefault();
+					const events = document.getElementById("events");
+					if (events) {
+						const y = events.getBoundingClientRect().top + window.scrollY - 80;
+						window.scrollTo({ top: y, behavior: "smooth" });
+					}
+				}}
+			>
+				Events
+			</a>
+			<Link
+				href="#rules"
+				className="px-4 py-2 rounded-full hover:bg-cyan-400/20 hover:text-cyan-300 transition-colors duration-200 font-medium text-sm md:text-base"
+			>
+				Rules
+			</Link>
+			<Link
+				href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
+				className="px-4 py-2 rounded-full hover:bg-cyan-400/20 hover:text-cyan-300 transition-colors duration-200 font-medium text-sm md:text-base"
+			>
+				Registration
+			</Link>
+		</nav>
+
+		{/* NAAC Logo */}
+		<div className="flex-shrink-0 mt-2 md:mt-0 ml-0 md:ml-4">
+			<Image
+				src="/NAAC_no_bg.png"
+				alt="NAAC Logo"
+				width={80}
+				height={80}
+				className="h-12 md:h-16 w-auto object-contain"
+				priority
+			/>
+		</div>
+	</div>
+</header>
+
+
+			{/* Main Content */}
+			<main className="flex-1 flex flex-col items-center justify-center pt-32 pb-16 w-full">
+				{/* Hero Section */}
+				<section className="w-full flex flex-col items-center justify-center px-4 lg:px-0">
+					<div className="max-w-4xl w-full mx-auto flex flex-col lg:flex-row gap-12 items-center justify-center">
+						{/* Left: Info & Hero */}
+						<div className="flex-1 flex flex-col items-start justify-center">
+							<div className="mb-6">
+								<p className="text-lg lg:text-2xl font-bold text-white">
+									School of Information Technology
+								</p>
+								<p className="text-base lg:text-lg font-semibold text-gray-300">
+									(Approved by AICTE)
+								</p>
+								<p className="text-base lg:text-lg font-semibold text-white mt-1">
+									Presents
+								</p>
+								<p className="text-xl lg:text-3xl font-extrabold text--400 mt-1 mb-2">
+									TECH FEST
+								</p>
+							</div>
+							<h1
+								ref={textRef}
+								className="text-3xl lg:text-6xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_20px_rgba(192,132,252,0.7)] leading-tight text-left"
+							>
+								TRAN
+								<span className="text-gray-400 drop-shadow-lg">S</span>
+								FO
+								<span className="text-gray-400 drop-shadow-lg">R</span>
+								<span className="text-gray-400 drop-shadow-lg">M</span>
+								ATION
+								<span className="block text-orange-400 text-2xl lg:text-4xl font-bold mt-2">
+									2025
+								</span>
+							</h1>
+							<p className="mt-2 text-lg lg:text-2xl font-semibold text-cyan-200 drop-shadow">
+								Empowering Youth For Viksit Bharat 2047
+							</p>
+						</div>
+						
+					</div>
+				</section>
+
+				{/* Event Highlights */}
+				<section className="w-full max-w-3xl mx-auto mt-12" id="highlights">
+					<div className="bg-white/10 border border-white/20 rounded-2xl p-8 backdrop-blur-md shadow-xl">
+						<p className="font-bold text-2xl text-purple-300 mb-4 text-center">
+							Event Highlights
+						</p>
+						<ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 list-disc list-inside text-base lg:text-lg text-white/90">
+							<li>Hands-on Learning</li>
+							<li>Innovation Showcase</li>
+							<li>Expert Interactions</li>
+							<li>Team Collaboration</li>
+							<li>Exciting Competitions</li>
+							<li>Prizes & Recognition</li>
+							<li>Networking Opportunities</li>
+							<li>Entertainment & Fun Zone</li>
+						</ul>
+						<div className="mt-6 text-center">
+							<p className="font-semibold text-lg text-orange-300">
+								Empowering Youth For Viksit Bharat 2047
+							</p>
+							
+							<p className="mt-2 text-base text-white">
+								Win a{" "}
+								<span className="font-bold text-yellow-400">
+									CASH PRIZE & TROPHY
+								</span>
+							</p>
+							<p className="mt-4 font-semibold text-white">
+								Dates & Venue:{" "}
+								<span className="text-orange-300">
+									31 OCT 2025 & 1 NOV 2025
+								</span>{" "}
+								|{" "}
+								<span className="text-cyan-300">
+									Main Block SRMUS 5th Mile
+								</span>
+							</p>
+						</div>
+					</div>
+				</section>
+
+				{/* About Section */}
+<section
+	id="about"
+	className="w-full max-w-3xl mx-auto mt-16"
+>
+	<div className="bg-white/10 border border-white/20 rounded-2xl p-8 backdrop-blur-md shadow-xl">
+		<h2 className="text-2xl lg:text-3xl font-bold text-purple-300 mb-4 text-left">
+			About
+		</h2>
+		<p className="mb-3">
+			<strong>Transformation 2025</strong> is the annual flagship technology and innovation festival of <strong>SRM University Sikkim</strong>, designed to inspire creativity, collaboration, and forward-thinking solutions for the nation’s future. Centered around the theme <em>“Empowering Youth for Viksit Bharat 2047”</em>, the festival reflects India’s aspiration to achieve developed-nation status by the centenary of independence.
+		</p>
+		<p className="mb-3">
+			Hosted by the <strong>School of Information Technology</strong>, Transformation 2025 will take place on <strong>31st October and 1st November</strong>, welcoming school and college students from across the region. This vibrant platform encourages young minds to showcase their talent through a variety of projects and competitions, including:
+		</p>
+		<ul className="list-disc list-inside mb-3">
+			<li><strong>Coding Challenge</strong> – test your programming and problem-solving skills.</li>
+			<li><strong>Ideathon</strong> – develop innovative solutions to real-world problems.</li>
+			<li><strong>Innovator's Expo</strong> – present cutting-edge projects and inventions.</li>
+			<li><strong>Quiz Show</strong> – compete on technology, science, and general knowledge.</li>
+			<li><strong>Funzone Gaming</strong> – enjoy skill-based and entertaining gaming competitions.</li>
+			<li><strong>Youth Parliament</strong> – engage in discussions on leadership and social issues.</li>
+			<li><strong>Tech Treasure Hunt</strong> – explore creativity and tech-based challenges.</li>
+		</ul>
+		<p className="mb-3">
+			More than just competitions, Transformation 2025 is a movement of knowledge and innovation—encouraging students to think beyond classrooms, create real-world solutions, and embrace the entrepreneurial spirit. Through keynote sessions, exhibitions, interactive workshops, and collaborative forums, participants get the opportunity to connect with industry experts, explore emerging trends, and translate their ideas into impactful action.
+		</p>
+		<p>
+			By celebrating talent, fostering leadership, and promoting innovation, Transformation 2025 not only highlights technological excellence but also reinforces <strong>SRM University Sikkim</strong>’s commitment to nurturing the change-makers who will drive India’s growth story toward <em>Viksit Bharat 2047</em>.
+		</p>
+	</div>
+</section>
+
+
+			{/* Contacts & Social */}
+<section className="w-full max-w-3xl mx-auto mt-16 flex justify-center">
+  <div className="w-full sm:w-3/4 lg:w-2/3 bg-white/10 border border-white/20 p-8 rounded-2xl backdrop-blur-md shadow-xl text-center">
+    <p className="font-semibold text-lg text-purple-300 mb-4">
+      Event Coordinator
+    </p>
+    <p className="mb-2">
+      Mr. Sancha Bir Gurung, Asst. Prof. –{" "}
+      <span className="font-bold text-cyan-300">7811928076</span>
+    </p>
+    <p className="mb-2">
+      Mr. Sivarama Kumar P, Asst. Prof. –{" "}
+      <span className="font-bold text-cyan-300">9940872949</span>
+    </p>
+    <p className="mb-0">
+      Email:{" "}
+      <a
+        href="mailto:transformation@srmus.edu.in"
+        className="underline text-orange-300"
       >
-        <source
-          src="/bg-large.mp4"
-          type="video/mp4"
-          media="(min-width: 1024px)"
-        />
-        <source
-          src="/bg-small.mp4"
-          type="video/mp4"
-          media="(max-width: 1023px)"
-        />
-        Your browser does not support the video tag.
-      </video>
+        transformation@srmus.edu.in
+      </a>
+    </p>
+  </div>
+</section>
 
-      <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
-      {/* logo */}
-      <div className="fixed flex flex-col lg:flex-row lg:space-x-10 lg:justify-between lg:items-center top-4 left-4 right-4 z-20 px-1 py-3 lg:px-12">
-        {/* SRM Logo Container */}
-        <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg mb-4 lg:mb-0">
-          <Image
-            src="/srmus-logo-full-length.png"
-            alt="SRM University Logo"
-            width={1000}
-            height={100}
-            className="h-6 lg:h-12 w-auto object-contain"
-          />
-        </div>
+				{/* Events Section */}
+				<section id="events" className="w-full max-w-3xl mx-auto mt-16">
+					<h2 className="text-2xl lg:text-3xl font-bold text-purple-300 mb-6 text-left">
+						Events
+					</h2>
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{EVENTS.map((btn, index) => (
+							<div className="relative group" key={index}>
+								{/* Neon purple animated background OUTSIDE the box */}
+								<div
+									className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-all duration-300 ease-in-out pointer-events-none"
+									style={{
+										background:
+											"linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)",
+										boxShadow:
+											"0 0 32px 8px #a855f7, 0 0 64px 16px #7c3aed",
+										filter: "blur(8px)",
+										zIndex: 0,
+									}}
+								></div>
+								<Link
+									href={btn.href}
+									className="relative flex items-center justify-center px-6 py-4 bg-white/20 backdrop-blur-lg rounded-xl shadow-lg text-white font-semibold text-center text-base lg:text-lg transition-all duration-300 ease-in-out
+                                        group-hover:translate-y-[-4px] group-hover:shadow-xl
+                                        focus:outline-none"
+									style={{ willChange: "transform", zIndex: 1 }}
+								>
+									{btn.text}
+								</Link>
+							</div>
+						))}
+					</div>
+				</section>
+			</main>
 
-        {/* NAAC Logo  */}
-        <div className="mb-4 lg:mb-0">
-          <Image
-            src="/NAAC_no_bg.png"
-            alt="NAAC Logo"
-            width={1000}
-            height={100}
-            className="h-10 lg:h-16 w-auto object-contain rounded-lg"
-          />
-        </div>
-      </div>
+		{/* Footer */}
+<footer className="w-full bg-black/90 backdrop-blur-md text-white px-6 lg:px-20 py-12 border-t border-white/20 mt-auto">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-start items-start gap-16 md:gap-20">
 
-      <div className="relative z-10 -mt-[90px] leading-snug lg:mt-0 flex flex-col items-start text-left h-full justify-center max-w-full lg:max-w-3xl space-y-2.5 lg:space-y-3 px-1 lg:px-0">
-        <div>
-          <p className="mb-0 pb-0 font-semibold text-xl text-orange-500 leading-none">
-            2025
-          </p>
-
-          <h1
-            ref={textRef}
-            className="
-    text-3xl lg:text-8xl mt-0 mb-0
-    font-extrabold uppercase tracking-widest
-    text-white
-    drop-shadow-[0_0_20px_rgba(192,132,252,0.7)]
-    leading-[1.05]
-    will-change-transform-filter /* <-- ADD THIS CLASS */
-  "
-          >
-            TRANSFORMATION
-          </h1>
-        </div>
-
-        <p className="text-md lg:text-2xl font-semibold leading-snug">
-          Organised by{" "}
-          <span className="text-white">School of Information & Technology</span>
-        </p>
-
-        <div className="flex space-x-2 justify-center items-center">
-          <a href="https://srmus.ac.in">
-            <p className="text-base lg:text-xl font-light italic opacity-90 bg-white/10 backdrop-blur-md rounded-md border border-white/20 px-2 lg:px-3 py-1 leading-relaxed">
-              SRM University Sikkim
-            </p>
-          </a>
-
-          <a href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="36"
-              height="36"
-              fill="rgba(255,255,255,1)"
-            >
-              <path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path>
-            </svg>
-          </a>
-        </div>
-
-        <button className="mt-2 transition-transform duration-300 hover:scale-105">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
-            className="mt-3 lg:mt-4 px-6 lg:px-8 py-2 lg:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-base lg:text-lg relative overflow-hidden"
-          >
-            <span className="relative z-10 transition-transform duration-300 hover:scale-110">
-              Register Now
-            </span>
-
-            <span
-              className="absolute inset-0 rounded-md bg-purple-500 blur-xl opacity-50 animate-pulse"
-              aria-hidden="true"
-            ></span>
-          </a>
-        </button>
-      </div>
-
-      <div className="absolute bottom-14 lg:bottom-18 right-3 lg:right-6 z-10 text-sm lg:px-14 lg:text-base space-y-1 lg:space-y-2 text-right">
-        <a
-          href="#coding-challenge"
-          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
-        >
-          CODING CHALLENGE
-        </a>
-        <a
-          href="#ideathon"
-          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
-        >
-          IDEATHON
-        </a>
-        <a
-          href="#innovators-expo"
-          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
-        >
-          INNOVATOR&apos;S EXPO
-        </a>
-        <a
-          href="#quiz"
-          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
-        >
-          QUIZ
-        </a>
-        <a
-          href="#funzone-gaming"
-          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
-        >
-          FUNZONE GAMING
-        </a>
-        <a
-          href="#youth-parliament"
-          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
-        >
-          YOUTH PARLIAMENT
-        </a>
-        <a
-          href="#tech-treasure-hunt"
-          className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
-        >
-          TECH TREASURE HUNT
-        </a>
-      </div>
-
-      {/* Footer */}
-      <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm lg:text-left px-4 lg:px-16 py-2 text-xs lg:text-sm border-t border-white/10 z-10">
-        © 2025 SRM University Sikkim. All rights reserved.
-      </footer>
+    {/* About / Branding */}
+    <div className="flex-[1_0_35%] flex flex-col">
+      <h3 className="text-2xl font-extrabold text-white mb-4">Transformation 2025</h3>
+      <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+        Annual flagship technology and innovation festival of SRM University Sikkim.  
+        Inspiring youth, fostering creativity, and empowering minds for a Viksit Bharat 2047.
+      </p>
     </div>
-  );
+
+    {/* Follow Us (Vertical) */}
+    <div className="flex-1 flex flex-col">
+      <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
+      <ul className="flex flex-col gap-3 text-sm md:text-base">
+        <li><a href="https://srmus.ac.in" target="_blank" className="hover:text-gray-400 transition-colors">Website</a></li>
+        <li><a href="https://www.instagram.com/transformation_srmus/?__d=1" target="_blank" className="hover:text-gray-400 transition-colors">Instagram</a></li>
+        <li><a href="https://x.com/SrmSikkim" target="_blank" className="hover:text-gray-400 transition-colors">Twitter</a></li>
+        <li><a href="https://facebook.com/SRMUSOfficial" target="_blank" className="hover:text-gray-400 transition-colors">Facebook</a></li>
+        <li><a href="https://in.linkedin.com/school/srmusikkim" target="_blank" className="hover:text-gray-400 transition-colors">Linkedin</a></li>
+      </ul>
+    </div>
+
+    {/* Contact */}
+    <div className="flex-1 flex flex-col">
+      <h3 className="text-xl font-bold text-white mb-4">Contact</h3>
+      <ul className="flex flex-col gap-2 text-sm md:text-base">
+        <li>Mr. Sancha Bir Gurung – <a href="tel:+917811928076" className="hover:text-gray-400 transition-colors">7811928076</a></li>
+        <li>Mr. Sivarama Kumar P – <a href="tel:+919940872949" className="hover:text-gray-400 transition-colors">9940872949</a></li>
+        <li>Email – <a href="mailto:transformation@srmus.edu.in" className="hover:text-gray-400 transition-colors">transformation@srmus.edu.in</a></li>
+      </ul>
+    </div>
+  </div>
+
+  {/* Divider */}
+  <div className="border-t border-white/20 mt-10"></div>
+
+  {/* Bottom */}
+  <div className="mt-6 text-center text-xs text-white/60">
+    © 2025 SRM University Sikkim. All rights reserved.
+  </div>
+</footer>
+
+
+
+		</div>
+	);
 }

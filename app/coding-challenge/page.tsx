@@ -1,121 +1,84 @@
-
-
 import Image from "next/image";
-import { useRef, useEffect, useContext } from "react";
-import { LoadingContext } from "../context/LoadingContext"; 
+import Link from "next/link";
 
-export default function CodingChallengePage() {
-  const textRef = useRef<HTMLHeadingElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const { isLoading } = useContext(LoadingContext);
-
-  useEffect(() => {
-    if (!isLoading) {
-      videoRef.current?.play().catch((err) => console.log("Autoplay prevented:", err));
-     
-    }
-  }, [isLoading]);
-
+export default function CodingChallange() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden text-white px-3 lg:px-16">
-      {/* Background video */}
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover -z-10"
-        loop
-        muted
-        playsInline
-        preload="auto"
-        poster="/poster-sm.png"
+    <div className="min-h-screen flex flex-col text-white relative overflow-hidden bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526]">
+      {/* Animated blurred gradient circles */}
+      <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-gradient-to-br from-purple-500 via-pink-400 to-cyan-400 rounded-full blur-[140px] opacity-50 pointer-events-none z-0" />
+      <div className="absolute bottom-[-120px] right-[-120px] w-[420px] h-[420px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 rounded-full blur-[140px] opacity-50 pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 w-[320px] h-[320px] bg-gradient-to-br from-yellow-400 via-pink-400 to-purple-400 rounded-full blur-[120px] opacity-40 pointer-events-none z-0 -translate-x-1/2 -translate-y-1/2" />
+
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/40 z-0 pointer-events-none" />
+
+       <header className="w-full fixed top-0 left-0 z-20 px-4 py-3 bg-white/10 backdrop-blur-lg shadow-lg border-b border-white/20">
+  <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+    {[
+      { href: "/coding-challenge", text: "CODING CHALLENGE" },
+      { href: "/ideathon", text: "IDEATHON" },
+      { href: "/innovators-expo", text: "INNOVATOR'S EXPO" },
+      { href: "/quiz", text: "QUIZ SHOW" },
+      { href: "/funzone-gaming", text: "FUNZONE GAMING" },
+      { href: "/youth-parliament", text: "YOUTH PARLIAMENT" },
+      { href: "/tech-treasure-hunt", text: "TECH TREASURE HUNT" },
+      { href: "/", text: "HOME PAGE" }, 
+    ].map((event) => (
+      <a
+        href={event.href}
+        key={event.text}
+        className="px-4 py-2 rounded-lg bg-white/20 backdrop-blur-md hover:bg-cyan-400/30 hover:text-cyan-300 font-medium text-sm md:text-base transition-colors duration-200 cursor-pointer"
       >
-        <source src="/bg-large.mp4" type="video/mp4" media="(min-width: 1024px)" />
-        <source src="/bg-small.mp4" type="video/mp4" media="(max-width: 1023px)" />
-        Your browser does not support the video tag.
-      </video>
+        {event.text}
+      </a>
+    ))}
+  </div>
+</header>
 
-      <div className="absolute inset-0 bg-black/60 -z-10" />
-
-      {/* Page content */}
-      <div className="flex flex-col items-center relative z-10 py-10">
-        <header className="mb-10 flex justify-center w-full">
-          <div className="bg-white/60 rounded-lg border border-white/30 p-3 lg:p-5 shadow-lg">
-            <Image
-              src="/srmus-logo-full-length.png"
-              alt="SRM University Logo"
-              width={450}
-              height={100}
-              className="object-contain"
-              priority
-            />
-          </div>
-        </header>
-
-        <div className="mb-6">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/2721/2721274.png"
-            alt="Laptop with Code"
-            className="w-32 h-32 mx-auto drop-shadow-lg"
-          />
-        </div>
-
-        <div className="text-center font-semibold text-yellow-300 mb-4">
-          TECH SKILLS | TROPHY | EVENTS | MENTORSHIP | PRIZES
-        </div>
-
-        <h1
-          ref={textRef}
-          className="text-4xl md:text-5xl font-extrabold text-center mb-6 tracking-widest text-yellow-400"
-        >
-          CODING CHALLENGE
+      {/* Main Content */}
+      <main className="flex flex-col items-center justify-center text-center px-6 mt-40 flex-grow relative z-09">
+        <h1 className="text-4xl lg:text-7xl font-extrabold mb-6 uppercase tracking-widest drop-shadow-[0_0_20px_rgba(192,132,252,0.7)] animate-pulse">
+          Coding Challenge
         </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-gray-800/80 rounded-2xl p-6 shadow-lg text-center">
-            <span className="text-3xl">📅</span>
-            <h3 className="text-xl font-bold mt-2">WHEN?</h3>
-            <p className="mt-1 text-gray-300">
-              31 Oct | School <br /> 01 Nov | College
-            </p>
-          </div>
-          <div className="bg-gray-800/80 rounded-2xl p-6 shadow-lg text-center">
-            <span className="text-3xl">🎓</span>
-            <h3 className="text-xl font-bold mt-2">WHO?</h3>
-            <p className="mt-1 text-gray-300">Any School and College Student !!</p>
-          </div>
-          <div className="bg-gray-800/80 rounded-2xl p-6 shadow-lg text-center">
-            <span className="text-3xl">📍</span>
-            <h3 className="text-xl font-bold mt-2">WHERE?</h3>
-            <p className="mt-1 text-gray-300">SRMUS Main Block!!</p>
-          </div>
-        </div>
-
-        <div className="text-center text-lg font-semibold text-yellow-200 mb-6">
-          SKILL UP ON PYTHON, VS CODE, COLOB, JCL AND MORE
-        </div>
-
-        <p className="max-w-2xl text-center text-gray-300 mb-12 leading-relaxed">
-          Join the Coding Challenge 2025 and test your programming skills against
-          real-world problems. Compete with fellow coders, showcase your
-          creativity, and win exciting TROPHY.
+        <p className="text-lg max-w-2xl leading-relaxed space-y-4">
+          <span className="block">
+            💻 Welcome to the <span className="font-semibold">Coding Challenge</span>!
+          </span>
+          <span className="block">
+            Test your programming skills, solve exciting problems, and compete with coders worldwide!
+          </span>
+          <span className="block font-medium mt-4">
+            📅 Date: <span className="text-yellow-400">31st Oct | 01st Nov </span>
+          </span>
+          <span className="block font-medium">
+            🏆 Organized by <span className="text-cyan-400">SRM University Sikkim, School of Information Technology</span>
+          </span>
         </p>
 
-        <footer className="text-center border-t border-gray-700 pt-6 w-full">
-          <div className="mb-2 text-sm text-gray-400">
-            <span>@srmsikkim</span> | <span>@transformation_srmus</span>
-          </div>
-          <div className="text-sm text-gray-400">
-            For More Information visit us at -{" "}
+        {/* Buttons */}
+        <div className="mt-8 flex flex-col gap-4">
+          <div className="flex gap-4 justify-center">
             <a
-              href="https://techfestsrmus.in"
-              target="_blank"
-              rel="noreferrer"
-              className="text-yellow-400 underline hover:text-yellow-300"
+              href="#register"
+              className="px-6 lg:px-8 py-2 lg:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-base lg:text-lg relative overflow-hidden transition-transform duration-300 hover:scale-105"
             >
-              techfestsrmus.in
+              Register Now
+            </a>
+
+            <a
+              href="#rules"
+              className="px-6 lg:px-8 py-2 lg:py-3 rounded-md bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-base lg:text-lg shadow-lg transition-transform duration-300 hover:scale-105"
+            >
+              View Rules
             </a>
           </div>
-        </footer>
-      </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full backdrop-blur-sm lg:text-left px-4 lg:px-16 py-2 text-xs lg:text-sm border-t border-white/10 z-10 text-center">
+        © 2025 CodingChallange. All rights reserved.
+      </footer>
     </div>
   );
 }
