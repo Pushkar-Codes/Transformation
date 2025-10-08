@@ -3,6 +3,7 @@ import { useEffect, useContext, useRef } from "react";
 import DemoAnimation from "@/lib/gsap";
 import Image from "next/image";
 import { LoadingContext } from "./context/LoadingContext";
+import Link from "next/link";
 
 export default function Page() {
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -137,7 +138,7 @@ export default function Page() {
         </button>
       </div>
 
-      <div className="absolute bottom-14 lg:bottom-18 right-3 lg:right-6 z-10 text-sm lg:px-14 lg:text-base space-y-1 lg:space-y-2 text-right">
+      <div className="absolute bottom-14 lg:bottom-18 right-3 lg:mb-0 mb-8 lg:right-6 z-10 text-sm lg:px-14 lg:text-base space-y-1 lg:space-y-2 text-right ">
         <a
           href="#coding-challenge"
           className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
@@ -183,13 +184,16 @@ export default function Page() {
       </div>
 
       {/* Footer */}
-      <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm lg:text-left px-4 lg:px-16 py-2 text-xs lg:text-sm border-t border-white/10 z-10">
-        <div className="flex justify-between px-4">
+      <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm text-left px-4 lg:px-16 py-4 text-xs lg:text-sm border-t border-white/10 z-10">
+        <div className="flex flex-col-reverse gap-2 lg:flex-row lg:justify-between">
           <div>© 2025 SRM University Sikkim. All rights reserved.</div>
           <div>
-            <a href="/rules-regulation" className="hover:underline">
-              <p>Rules & Regulation</p>
-            </a>
+            <Link
+              href="/rules-regulation"
+              className="hover:underline mr-5 lg:mr-0"
+            >
+              Rules & Regulation
+            </Link>
           </div>
         </div>
       </footer>

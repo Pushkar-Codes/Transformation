@@ -1,13 +1,12 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { animateHamburger } from "@/lib/gsap"; // Adjust this import path
+import Link from "next/link";
+import { animateHamburger } from "@/lib/gsap";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const [isDesktopEventsOpen, setDesktopEventsOpen] = useState(false);
-
   const [isMobileEventsOpen, setMobileEventsOpen] = useState(false);
 
   const mobileMenuRef = useRef(null);
@@ -27,7 +26,6 @@ export default function Navbar() {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
-
     if (isMobileMenuOpen) {
       setMobileEventsOpen(false);
     }
@@ -56,8 +54,9 @@ export default function Navbar() {
       <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            {/* Logos Section */}
             <div className="flex items-center space-x-2 sm:space-x-4">
-              <a href="/">
+              <Link href="/">
                 <Image
                   src="/srmus-logo-full-length.png"
                   alt="SRM University Logo"
@@ -65,8 +64,9 @@ export default function Navbar() {
                   height={40}
                   className="h-8 sm:h-10 w-auto object-contain"
                 />
-              </a>
-              <a href="#">
+              </Link>
+              <Link href="#">
+                {" "}
                 <Image
                   src="/NAAC_no_bg.png"
                   alt="NAAC Logo"
@@ -74,22 +74,22 @@ export default function Navbar() {
                   height={60}
                   className="h-12 sm:h-14 w-auto object-contain"
                 />
-              </a>
+              </Link>
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
-              <a
+              <Link
                 href="/"
                 className="text-gray-800 hover:text-purple-600 transition-colors duration-300 font-medium"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#about"
                 className="text-gray-800 hover:text-purple-600 transition-colors duration-300 font-medium"
               >
                 About
-              </a>
+              </Link>
 
               <div className="relative">
                 <button
@@ -118,14 +118,14 @@ export default function Navbar() {
                   <div className="absolute top-full right-0 mt-2 w-56 rounded-md shadow-lg bg-white/30 backdrop-blur-2xl">
                     <div className="py-1">
                       {eventLinks.map((link) => (
-                        <a
+                        <Link
                           key={link.name}
                           href={link.href}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           onClick={() => setDesktopEventsOpen(false)}
                         >
                           {link.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -176,23 +176,24 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         ref={mobileMenuRef}
-        className="fixed top-0 left-0 h-full w-full bg-white z-40 flex flex-col items-center justify-center space-y-8 md:hidden transform -translate-x-full" // Start off-screen
+        className="fixed top-0 left-0 h-full w-full bg-white z-40 flex flex-col items-center justify-center space-y-8 md:hidden transform -translate-x-full"
       >
-        <a
+        <Link
           href="/"
           className="text-2xl text-gray-800 font-bold"
           onClick={toggleMobileMenu}
         >
           Home
-        </a>
-        <a
+        </Link>
+        <Link
           href="/#about"
           className="text-2xl text-gray-800 font-bold"
           onClick={toggleMobileMenu}
         >
           About
-        </a>
+        </Link>
 
+        {/* Mobile Events Dropdown */}
         <div className="w-full text-center">
           <button
             onClick={toggleMobileEvents}
@@ -224,14 +225,14 @@ export default function Navbar() {
           >
             <div className="flex flex-col space-y-4">
               {eventLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="text-lg text-gray-600"
                   onClick={toggleMobileMenu}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
