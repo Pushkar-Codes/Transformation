@@ -109,3 +109,89 @@ export default function DemoAnimation(element: HTMLElement | null) {
     });
   });
 }
+
+//menu
+
+export const animateHamburger = (
+  isOpen: boolean,
+  menu: gsap.TweenTarget,
+  topPath: gsap.TweenTarget,
+  middlePath: gsap.TweenTarget,
+  bottomPath: gsap.TweenTarget
+) => {
+  const tl = gsap.timeline();
+
+  if (isOpen) {
+    // Animate menu sliding in
+    gsap.to(menu, {
+      x: 0,
+      duration: 0.5,
+      ease: "power3.inOut",
+    });
+
+    // Animate hamburger icon to an "X"
+    tl.to(
+      topPath,
+      {
+        rotate: 45,
+        y: 6, // Adjust this value based on SVG viewbox/size
+        transformOrigin: "center center",
+        duration: 0.3,
+      },
+      0
+    )
+      .to(
+        middlePath,
+        {
+          opacity: 0,
+          duration: 0.2,
+        },
+        0
+      )
+      .to(
+        bottomPath,
+        {
+          rotate: -45,
+          y: -6, // Adjust this value based on SVG viewbox/size
+          transformOrigin: "center center",
+          duration: 0.3,
+        },
+        0
+      );
+  } else {
+    // Animate menu sliding out
+    gsap.to(menu, {
+      x: "-100%",
+      duration: 0.5,
+      ease: "power3.inOut",
+    });
+
+    // Animate "X" back to hamburger icon
+    tl.to(
+      topPath,
+      {
+        rotate: 0,
+        y: 0,
+        duration: 0.3,
+      },
+      0
+    )
+      .to(
+        middlePath,
+        {
+          opacity: 1,
+          duration: 0.2,
+        },
+        0
+      )
+      .to(
+        bottomPath,
+        {
+          rotate: 0,
+          y: 0,
+          duration: 0.3,
+        },
+        0
+      );
+  }
+};
