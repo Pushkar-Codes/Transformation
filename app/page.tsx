@@ -101,7 +101,7 @@ export default function Page() {
         </p>
 
         <div className="flex space-x-2 justify-center items-center">
-          <a href="https://srmus.ac.in">
+          <a href="https://srmus.ac.in" className="hover:underline">
             <p className="text-base lg:text-xl font-light italic opacity-90 bg-white/10 backdrop-blur-md rounded-md border border-white/20 px-2 lg:px-3 py-1 leading-relaxed">
               SRM University Sikkim
             </p>
@@ -125,7 +125,7 @@ export default function Page() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
             className="mt-3 lg:mt-4 px-6 lg:px-8 py-2 lg:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-base lg:text-lg relative overflow-hidden"
           >
-            <span className="relative z-10 transition-transform duration-300 hover:scale-110">
+            <span className="relative z-10 transition-transform duration-300 hover:scale-110 hover:underline">
               Register Now
             </span>
 
@@ -184,7 +184,14 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm lg:text-left px-4 lg:px-16 py-2 text-xs lg:text-sm border-t border-white/10 z-10">
-        © 2025 SRM University Sikkim. All rights reserved.
+        <div className="flex justify-between px-4">
+          <div>© 2025 SRM University Sikkim. All rights reserved.</div>
+          <div>
+            <a href="/rules-regulation" className="hover:underline">
+              <p>Rules & Regulation</p>
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
