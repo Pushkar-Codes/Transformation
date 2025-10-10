@@ -140,13 +140,13 @@ export default function Page() {
 
       <div className="absolute bottom-14 lg:bottom-18 right-3 lg:mb-0 mb-8 lg:right-6 z-10 text-sm lg:px-14 lg:text-base space-y-1 lg:space-y-2 text-right ">
         <a
-          href="#coding-challenge"
+          href="/coding-challenge"
           className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
         >
           CODING CHALLENGE
         </a>
         <a
-          href="#ideathon"
+          href="/ideathon"
           className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
         >
           IDEATHON
@@ -158,7 +158,7 @@ export default function Page() {
           INNOVATOR&apos;S EXPO
         </a>
         <a
-          href="#quiz"
+          href="/quiz"
           className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
         >
           QUIZ
@@ -176,7 +176,7 @@ export default function Page() {
           YOUTH PARLIAMENT
         </a>
         <a
-          href="#tech-treasure-hunt"
+          href="/tech-treasure-hunt"
           className="opacity-90 hover:opacity-100 transition cursor-pointer bg-white/10 backdrop-blur-md border border-white/20 rounded-md px-2 lg:px-3 py-1 block"
         >
           TECH TREASURE HUNT

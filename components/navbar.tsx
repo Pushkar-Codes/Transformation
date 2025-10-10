@@ -40,13 +40,13 @@ export default function Navbar() {
   };
 
   const eventLinks = [
-    { name: "Coding Challenge", href: "/#coding-challenge" },
-    { name: "Ideathon", href: "/#ideathon" },
+    { name: "Coding Challenge", href: "/coding-challenge" },
+    { name: "Ideathon", href: "/ideathon" },
     { name: "Innovator's Expo", href: "/#innovators-expo" },
-    { name: "Quiz", href: "/#quiz" },
+    { name: "Quiz", href: "/quiz" },
     { name: "Funzone Gaming", href: "/#funzone-gaming" },
     { name: "Youth Parliament", href: "/#youth-parliament" },
-    { name: "Tech Treasure Hunt", href: "/#tech-treasure-hunt" },
+    { name: "Tech Treasure Hunt", href: "/tech-treasure-hunt" },
   ];
 
   return (
