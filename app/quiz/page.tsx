@@ -2,20 +2,32 @@
 
 import Navbar from "@/components/navbar";
 import Link from "next/link";
-import Image from "next/image";
+import { useRef } from "react";
 
 export default function QuizShow() {
+  const rulesRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToRules = () => {
+    const el = rulesRef.current;
+    if (el) {
+      window.scrollTo({
+        top: el.offsetTop - 100, // offset for navbar
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="relative min-h-screen p-4 lg:p-8 bg-gradient-to-br from-purple-900 via-violet-800 to-pink-900 text-white font-sans overflow-hidden">
+    <div className="relative min-h-screen px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-6 sm:py-8 bg-gradient-to-br from-purple-900 via-violet-800 to-pink-900 text-white font-sans overflow-hidden">
       {/* Navbar */}
       <Navbar />
 
       {/* Spacer for fixed navbar */}
-      <div className="h-20" />
+      <div className="h-20 sm:h-24 md:h-28" />
 
       {/* Background Glow */}
-      <div className="absolute top-[-150px] left-[-150px] w-[450px] h-[450px] bg-gradient-to-br from-purple-500 via-pink-500 to-fuchsia-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
-      <div className="absolute bottom-[-150px] right-[-150px] w-[450px] h-[450px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
+      <div className="absolute top-[-20%] left-[-20%] w-[60vw] h-[60vw] max-w-[450px] max-h-[450px] bg-gradient-to-br from-purple-500 via-pink-500 to-fuchsia-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
+      <div className="absolute bottom-[-20%] right-[-20%] w-[60vw] h-[60vw] max-w-[450px] max-h-[450px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
 
       {/* Main Section */}
       <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 lg:px-20 mt-16 space-y-10">
@@ -39,7 +51,7 @@ export default function QuizShow() {
           </p>
 
           {/* Event Info Section */}
-          <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-10">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-8 px-2">
             <span className="block font-medium mt-2">
               Date:{" "}
               <span className="text-purple-300 font-semibold">
@@ -61,50 +73,98 @@ export default function QuizShow() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
-              className="px-6 lg:px-8 py-2 lg:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-base lg:text-lg relative overflow-hidden transition-transform duration-300 hover:scale-105"
+              className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-sm sm:text-base md:text-lg relative overflow-hidden transition-transform duration-300 hover:scale-105"
             >
-              <span className="relative z-10">{"Register Now"}</span>
+              <span className="relative z-10">Register Now</span>
               <span
                 className="absolute inset-0 rounded-md bg-pink-500 blur-xl opacity-40 animate-pulse"
                 aria-hidden="true"
               ></span>
             </Link>
 
-            <Link
-              href="/rules-regulation"
-              className="px-6 lg:px-8 py-2 lg:py-3 rounded-md bg-gradient-to-r from-fuchsia-500 to-pink-600 text-white font-bold text-base lg:text-lg shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-transform duration-300 hover:scale-105"
+            <button
+              onClick={scrollToRules}
+              className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-gradient-to-r from-fuchsia-500 to-pink-600 text-white font-bold text-sm sm:text-base md:text-lg shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-transform duration-300 hover:scale-105"
             >
               View Rules
-            </Link>
+            </button>
           </div>
         </div>
 
         {/* Coordinator Section */}
-        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 lg:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
-          <h2 className="text-xl font-bold text-white mb-2 tracking-wide">
+        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+          <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
-          <p className="text-white/90 mb-6 font-medium">Mrs. Hema Malini S</p>
+          <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
+            Mrs. Hema Malini S
+          </p>
 
-          <h3 className="text-lg font-semibold text-white mb-3">
+          <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
             Student Volunteers
           </h3>
-          <ul className="flex flex-wrap justify-center gap-4 text-white/90 font-medium">
+          <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 text-white/90 font-medium text-sm sm:text-base">
             <li>Adarsh Adhikari</li>
             <li>Kala Sharma</li>
             <li>Rosan Rai</li>
             <li>Aditi Biswakarma</li>
           </ul>
         </div>
+
+        {/* Rules Section */}
+        <div
+          ref={rulesRef}
+          className="w-full max-w-3xl mt-16 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-left text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+        >
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
+            Quiz Competition Rules
+          </h2>
+
+          <p className="mt-2 font-semibold text-sm sm:text-base">
+            1. Eligibility & Team
+          </p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">
+            • Total 4 members in one team
+          </p>
+
+          <p className="mt-4 font-semibold text-sm sm:text-base">2. Rounds</p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">• Total 3 Rounds</p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">
+            • Each round has a fixed number of questions
+          </p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">
+            • Time limit per question 30-60 sec
+          </p>
+
+          <p className="mt-4 font-semibold text-sm sm:text-base">
+            3. Answer System
+          </p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">
+            • Round 1: Oral Questions – one team at a time
+          </p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">
+            • Round 2: Picture Quiz
+          </p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">
+            • Round 3: Rapid fire round – 5 to 8 questions. Press Buzzer fast
+            for Answer.
+          </p>
+
+          <p className="mt-4 font-semibold text-sm sm:text-base">4. Points</p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">
+            • +10 points for Right Answer
+          </p>
+          <p className="ml-4 mt-1 text-sm sm:text-base">• 0 points for wrong</p>
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center py-6 px-4 text-xs lg:text-sm border-t border-white/10 backdrop-blur-sm text-white/80 relative z-10">
+      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm md:text-base border-t border-white/10 backdrop-blur-sm text-white/80 relative z-10">
         <div className="max-w-4xl mx-auto space-y-3">
-          <h3 className="text-white font-bold text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+          <h3 className="text-white font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
             CONTACT US
           </h3>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -121,7 +181,7 @@ export default function QuizShow() {
               techfestsrmus.in
             </a>
           </p>
-          <p className="text-white/50 text-[12px]">
+          <p className="text-white/50 text-[11px] sm:text-[12px]">
             © 2025 Transformation | SRM University Sikkim. All Rights Reserved.
           </p>
         </div>
