@@ -36,22 +36,32 @@ export default function TechTreasureHunt() {
             TECH TREASURE HUNT 🔎
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4 sm:mt-6 px-2">
-            Get ready to dive into a world where technology and adventure come together. Decode the clues, race against time, and use your logic to uncover the hidden digital treasure.
-            Every challenge will test your mind, your teamwork, and your curiosity. Only those who think fast and stay sharp will make it to the end where the real reward awaits.
+          <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-6">
+            Get ready to dive into a world where technology and adventure come
+            together. Decode the clues, race against time, and use your logic to
+            uncover the hidden digital treasure. Every challenge will test your
+            mind, your teamwork, and your curiosity. Only those who think fast
+            and stay sharp will make it to the end where the real reward awaits.
           </p>
 
-          <p className="text-white/80 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-            Open to all curious minds – school and college students are welcome to compete, solve puzzles, and win exciting prizes.
+          <p className="text-white/80 mt-3 text-base max-w-2xl mx-auto">
+            Open to all curious minds school and college students are welcome to
+            compete, solve puzzles, and win exciting prizes.
           </p>
 
           {/* Event Info Section */}
           <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-8 px-2">
             <span className="block font-medium mt-2">
-              Date: <span className="text-purple-300 font-semibold">31st Oct | 01st Nov, 2025</span>
+              Date:{" "}
+              <span className="text-purple-300 font-semibold">
+                31st Oct | 01st Nov, 2025
+              </span>
             </span>
             <span className="block font-medium mt-1">
-              Venue: <span className="text-purple-300 font-semibold">SRMUS Main Block, 5th Mile, Tadong, Gangtok</span>
+              Venue:{" "}
+              <span className="text-purple-300 font-semibold">
+                SRMUS Main Block, 5th Mile, Tadong, Gangtok
+              </span>
             </span>
           </p>
 
@@ -82,7 +92,9 @@ export default function TechTreasureHunt() {
           <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
-          <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">Abhimanyu Sharma</p>
+          <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
+            Abhimanyu Sharma
+          </p>
 
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
             Student Volunteers
@@ -100,14 +112,22 @@ export default function TechTreasureHunt() {
           ref={rulesRef}
           className="w-full max-w-3xl mt-16 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-left text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.3)]"
         >
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">RULES & REGULATIONS</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
+            RULES & REGULATIONS
+          </h2>
 
           <ol className="list-decimal list-inside text-white/90 space-y-2 text-sm sm:text-base">
             <li>The hunt is open to registered participants only.</li>
             <li>Teams must consist of 1 to 3 members.</li>
             <li>Each team will receive the first clue at the start.</li>
-            <li>Clues must be solved in the given sequence. Skipping or rearranging is not allowed.</li>
-            <li>The treasure is hidden within the defined boundaries. No team may go outside the designated area.</li>
+            <li>
+              Clues must be solved in the given sequence. Skipping or
+              rearranging is not allowed.
+            </li>
+            <li>
+              The treasure is hidden within the defined boundaries. No team may
+              go outside the designated area.
+            </li>
           </ol>
         </div>
       </main>
@@ -118,9 +138,11 @@ export default function TechTreasureHunt() {
           <h3 className="text-white font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
             CONTACT US
           </h3>
-          <p className="text-white/80 text-xs sm:text-sm md:text-base leading-relaxed">
-            <span className="font-semibold">Email:</span> techfestsrmus.in <br />
-            <span className="font-semibold">Contact:</span> Abhimanyu Sharma – 6297706073 <br />
+          <p className="text-white/80 text-sm leading-relaxed">
+            <span className="font-semibold">Email:</span> techfestsrmus.in{" "}
+            <br />
+            <span className="font-semibold">Contact:</span> Abhimanyu Sharma –
+            6297706073 <br />
             <span className="font-semibold">Instagram:</span>{" "}
             <a
               href="https://instagram.com/transformation_srmus"

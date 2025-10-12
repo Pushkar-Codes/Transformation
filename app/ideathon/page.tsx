@@ -29,14 +29,15 @@ export default function Ideathon() {
       <main className="relative z-10 flex flex-col items-center justify-center text-center px-2 sm:px-4 md:px-10 mt-10 sm:mt-16 space-y-10 w-full">
         <div className="w-full max-w-4xl flex flex-col items-center justify-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-2 sm:mb-4 break-words">
-            IDEATHON:
+            IDEATHON
           </h1>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 text-center break-words">
+          <h1 className="text-2xl lg:text-3xl font-extrabold uppercase tracking-widest text-pink-400 drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 text-center break-words">
             TECH FOR SOCIAL IMPACT
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4 sm:mt-6 px-2">
-            A platform for young minds to develop technology-driven solutions for social impact and present innovative ideas to the jury.
+            A platform for young minds to develop technology-driven solutions
+            for social impact and present innovative ideas to the jury.
           </p>
 
           {/* Event Highlights */}
@@ -48,7 +49,9 @@ export default function Ideathon() {
               <li>Encourage innovation and social impact projects.</li>
               <li>Teams from schools/colleges participate (2–5 members).</li>
               <li>Platform to present solutions to real-world problems.</li>
-              <li>Jury evaluates ideas on innovation, feasibility, and impact.</li>
+              <li>
+                Jury evaluates ideas on innovation, feasibility, and impact.
+              </li>
             </ul>
           </div>
 
@@ -91,11 +94,13 @@ export default function Ideathon() {
         </div>
 
         {/* Coordinator Section */}
-        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+        <div className="w-full max-w-2xl  bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
-          <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">Mr. SivaramaKumar P</p>
+          <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
+            Mr. SivaramaKumar P
+          </p>
 
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
             Student Volunteers
@@ -113,7 +118,7 @@ export default function Ideathon() {
         {/* Rules Section */}
         <div
           ref={rulesRef}
-          className="w-full max-w-3xl mt-20 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-left shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+          className="w-full max-w-3xl bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-left shadow-[0_0_25px_rgba(255,255,255,0.3)]"
           style={{ scrollMarginTop: "100px" }}
         >
           <h2 className="text-xl sm:text-2xl font-bold text-purple-200 mb-4 text-center">
@@ -122,37 +127,62 @@ export default function Ideathon() {
 
           <ol className="list-decimal list-inside text-white/90 space-y-3 text-sm sm:text-base">
             <li>Teams of 2–5 members from each school can participate.</li>
-            <li>Ideas must focus on technology-driven solutions for social impact.</li>
-            <li>All teams must register before the deadline with basic details.</li>
-            <li>Submit a brief problem statement (will be provided) and solution in PPT/document format.</li>
-            <li>Each team gets 5–7 minutes to present plus 3 minutes for Q&amp;A.</li>
-            <li>Ideas will be judged on innovation, impact, feasibility, scalability, and clarity.</li>
-            <li>All work must be original, respectful, and free from plagiarism.</li>
-            <li>Final Decision: The jury’s decision will be final and binding.</li>
+            <li>
+              Ideas must focus on technology-driven solutions for social impact.
+            </li>
+            <li>
+              All teams must register before the deadline with basic details.
+            </li>
+            <li>
+              Submit a brief problem statement (will be provided) and solution
+              in PPT/document format.
+            </li>
+            <li>
+              Each team gets 5–7 minutes to present plus 3 minutes for Q&amp;A.
+            </li>
+            <li>
+              Ideas will be judged on innovation, impact, feasibility,
+              scalability, and clarity.
+            </li>
+            <li>
+              All work must be original, respectful, and free from plagiarism.
+            </li>
+            <li>
+              Final Decision: The jury’s decision will be final and binding.
+            </li>
           </ol>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm md:text-base border-t border-white/10 backdrop-blur-sm text-white/80 relative z-10">
+
+      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
         <div className="max-w-4xl mx-auto space-y-3">
-          <h3 className="text-white font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+          <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
             CONTACT US
           </h3>
-          <p className="text-white/80 text-xs sm:text-sm md:text-base leading-relaxed">
-            <span className="font-semibold">Instagram:</span> @transformation_srmus <br />
-            <span className="font-semibold">Faculty Contact:</span> Mr. SivaramaKumar P - 9940872949 <br />
-            <span className="font-semibold">Website:</span>{" "}
+          <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
             <a
-              href="https://techfestsrmus.in"
-              className="underline text-white/80 hover:text-white transition"
+              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+              className="hover:underline"
+            >
+              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
+              @transformation_srmus <br />
+              <span className="text-[#ffcc33] font-semibold"></span>
+            </a>
+            Faculty Contact: Mr. SivaramKumar P (Asst. Prof.) - 9940872949{" "}
+            <br />
+            <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
+            <a
+              href="https://srmus.ac.in"
+              className="underline text-[#ffcc33] hover:text-white transition"
               target="_blank"
             >
-              techfestsrmus.in
+              SRM University Sikkim
             </a>
           </p>
-          <p className="text-white/50 text-[11px] sm:text-[12px]">
-            © 2025 Transformation | SRM University Sikkim. All Rights Reserved.
+          <p className="text-gray-400 text-[11px] sm:text-xs">
+            © 2025 SRM University Sikkim. All rights reserved.
           </p>
         </div>
       </footer>

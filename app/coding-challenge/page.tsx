@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRef } from "react";
 
 export default function CodingChallange() {
-  
   const rulesRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToRules = () => {
@@ -18,18 +17,17 @@ export default function CodingChallange() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-purple-900 via-violet-800 to-pink-900 text-white font-sans overflow-hidden">
-    
       {/* Navbar */}
       <Navbar />
 
-   <div className="h-40" />
+      <div className="h-40" />
 
       {/* Background Glows */}
       <div className="absolute top-[-100px] left-[-100px] w-[350px] h-[350px] bg-gradient-to-br from-purple-500 via-pink-500 to-fuchsia-600 rounded-full blur-[130px] opacity-30 pointer-events-none z-0" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[350px] h-[350px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[130px] opacity-30 pointer-events-none z-0" />
 
       {/* Main Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-12 lg:px-20 pt-36 pb-20 space-y-10">
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-12 lg:px-20   space-y-10">
         <div className="max-w-3xl w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(236,72,153,0.8)] mb-4">
             Coding Challenge
@@ -38,7 +36,10 @@ export default function CodingChallange() {
           <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
             <span className="block">
               Welcome to the{" "}
-              <span className="text-pink-400 font-semibold">Coding Challenge</span>!
+              <span className="text-pink-400 font-semibold">
+                Coding Challenge
+              </span>
+              !
             </span>
             <span className="block mt-2">
               Test your programming skills, solve exciting problems, and compete
@@ -87,7 +88,7 @@ export default function CodingChallange() {
             Mr. Arghya Sikdar
           </p>
 
-          <h3 className="text-base sm:text-lg font-semibold text-pink-300 mb-3">
+          <h3 className="text-lg font-semibold text-pink-300 mb-3">
             Student Volunteers
           </h3>
           <ul className="flex flex-wrap justify-center gap-3 sm:gap-4 text-pink-100 font-medium text-sm sm:text-base">
@@ -110,7 +111,7 @@ export default function CodingChallange() {
           </h2>
 
           <p className="whitespace-pre-line text-xs sm:text-sm md:text-base">
-{`1. Eligibility
+            {`1. Eligibility
 ● Open to all students from recognized institutions.
 ● Participants can register individually or in teams of 4.
 ● Each participant/team must use their own valid student ID at the time of registration.
@@ -159,17 +160,22 @@ export default function CodingChallange() {
             CONTACT US
           </h3>
           <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
-            <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
-            @transformation_srmus <br />
-            <span className="text-[#ffcc33] font-semibold">Faculty Contact:</span>{" "}
-            Mr. Arghya Sikdar (Asst. Prof.) - 6294571233 <br />
+            <a
+              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+              className="hover:underline"
+            >
+              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
+              @transformation_srmus <br />
+              <span className="text-[#ffcc33] font-semibold"></span>
+            </a>
+            Faculty Contact: Mr. Arghya Sikdar (Asst. Prof.) - 6294571233 <br />
             <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
             <a
               href="https://srmus.ac.in"
               className="underline text-[#ffcc33] hover:text-white transition"
               target="_blank"
             >
-              SRM University
+              SRM University Sikkim
             </a>
           </p>
           <p className="text-gray-400 text-[11px] sm:text-xs">
