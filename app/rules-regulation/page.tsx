@@ -1,13 +1,12 @@
 import Navbar from "@/components/navbar";
 import Image from "next/image";
-import Link from "next/link"; // Import Link for proper navigation
+import Link from "next/link";
 
 export default function RulesRegulation() {
   return (
     <div className="relative min-h-screen p-4 lg:p-8 bg-gradient-to-br from-purple-900 via-violet-800 to-pink-900 text-white">
       <Navbar />
 
-      {/* Spacer to push content below the fixed navbar */}
       <div className="h-20" />
 
       {/* --- Main Section --- */}

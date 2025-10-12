@@ -29,35 +29,44 @@ export default function Ideathon() {
       <main className="relative z-10 flex flex-col items-center justify-center text-center px-2 sm:px-4 md:px-10 mt-10 sm:mt-16 space-y-10 w-full">
         <div className="w-full max-w-4xl flex flex-col items-center justify-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-2 sm:mb-4 break-words">
-            IDEATHON:
+            IDEATHON
           </h1>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 text-center break-words">
+          <h1 className="text-2xl lg:text-3xl font-extrabold uppercase tracking-widest text-pink-400 drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 text-center break-words">
             TECH FOR SOCIAL IMPACT
           </h1>
 
-          <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-6">
-            Innovate, collaborate, and create groundbreaking tech solutions that
-            drive real change and make a meaningful impact in society. Join the
-            movement where technology meets purpose shaping a better, smarter,
-            and more inclusive future for all.
+          <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4 sm:mt-6 px-2">
+            A platform for young minds to develop technology-driven solutions
+            for social impact and present innovative ideas to the jury.
           </p>
 
-          <h2 className="text-2xl lg:text-3xl font-bold text-white tracking-wide mt-6">
-            <span className="text-purple-300">TECH FOR SOCIAL IMPACT</span>
-          </h2>
+          {/* Event Highlights */}
+          <div className="text-left w-full max-w-2xl mt-10 space-y-3 text-white/90 px-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-center text-purple-200 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+              EVENT HIGHLIGHTS
+            </h2>
+            <ul className="list-disc list-inside mt-4 space-y-2 text-sm sm:text-base leading-relaxed">
+              <li>Encourage innovation and social impact projects.</li>
+              <li>Teams from schools/colleges participate (2–5 members).</li>
+              <li>Platform to present solutions to real-world problems.</li>
+              <li>
+                Jury evaluates ideas on innovation, feasibility, and impact.
+              </li>
+            </ul>
+          </div>
 
-          {/* Event Info Section */}
-          <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-10">
+          {/* Event Info */}
+          <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-10 px-2">
             <span className="block font-medium mt-2">
-              Venue:{" "}
+              Date:{" "}
               <span className="text-purple-300 font-semibold">
-                SRMUS Main Block, 5th Mile, Tadong, Gangtok
+                31st Oct | 1st Nov, 2025
               </span>
             </span>
             <span className="block font-medium mt-1">
-              Date:{" "}
+              Venue:{" "}
               <span className="text-purple-300 font-semibold">
-                Oct 31st & 1st Nov, 2025
+                SRM University Main Block, 5th Mile, Room No: 405
               </span>
             </span>
           </p>
@@ -85,12 +94,12 @@ export default function Ideathon() {
         </div>
 
         {/* Coordinator Section */}
-        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+        <div className="w-full max-w-2xl  bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
-          <p className="text-white/90 mb-6 font-medium">
-            Mrs. Priyadarshini Pradhan
+          <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
+            Mr. SivaramaKumar P
           </p>
 
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
@@ -109,7 +118,7 @@ export default function Ideathon() {
         {/* Rules Section */}
         <div
           ref={rulesRef}
-          className="w-full max-w-3xl mt-20 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-left shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+          className="w-full max-w-3xl bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-left shadow-[0_0_25px_rgba(255,255,255,0.3)]"
           style={{ scrollMarginTop: "100px" }}
         >
           <h2 className="text-xl sm:text-2xl font-bold text-purple-200 mb-4 text-center">
@@ -146,27 +155,34 @@ export default function Ideathon() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm md:text-base border-t border-white/10 backdrop-blur-sm text-white/80 relative z-10">
+
+      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
         <div className="max-w-4xl mx-auto space-y-3">
-          <h3 className="text-white font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+          <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
             CONTACT US
           </h3>
-          <p className="text-white/80 text-sm leading-relaxed">
-            <span className="font-semibold">Email:</span> techfestsrmus.in{" "}
-            <br />
-            <span className="font-semibold">Contact:</span> Mrs. Priyadarshini
-            Pradhan – 9566976122 <br />
-            <span className="font-semibold">Instagram:</span>{" "}
+          <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
             <a
-              href="https://techfestsrmus.in"
-              className="underline text-white/80 hover:text-white transition"
+              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+              className="hover:underline"
+            >
+              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
+              @transformation_srmus <br />
+              <span className="text-[#ffcc33] font-semibold"></span>
+            </a>
+            Faculty Contact: Mr. SivaramKumar P (Asst. Prof.) - 9940872949{" "}
+            <br />
+            <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
+            <a
+              href="https://srmus.ac.in"
+              className="underline text-[#ffcc33] hover:text-white transition"
               target="_blank"
             >
-              techfestsrmus.in
+              SRM University Sikkim
             </a>
           </p>
-          <p className="text-white/50 text-[11px] sm:text-[12px]">
-            © 2025 Transformation | SRM University Sikkim. All Rights Reserved.
+          <p className="text-gray-400 text-[11px] sm:text-xs">
+            © 2025 SRM University Sikkim. All rights reserved.
           </p>
         </div>
       </footer>

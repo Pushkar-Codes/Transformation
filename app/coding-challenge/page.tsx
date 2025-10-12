@@ -27,7 +27,7 @@ export default function CodingChallange() {
       <div className="absolute bottom-[-100px] right-[-100px] w-[350px] h-[350px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[130px] opacity-30 pointer-events-none z-0" />
 
       {/* Main Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-12 lg:px-20 pt-36 pb-20 space-y-10">
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-12 lg:px-20   space-y-10">
         <div className="max-w-3xl w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(236,72,153,0.8)] mb-4">
             Coding Challenge
@@ -46,7 +46,6 @@ export default function CodingChallange() {
               with coders worldwide!
             </span>
             <span className="block font-medium mt-4">
-              Date: <span className="text-purple-300">31st Oct | 01st Nov</span>
               Date: <span className="text-purple-300">31st Oct | 01st Nov</span>
             </span>
             <span className="block font-medium mt-1">
@@ -161,19 +160,22 @@ export default function CodingChallange() {
             CONTACT US
           </h3>
           <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
-            <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
-            @transformation_srmus <br />
-            <span className="text-[#ffcc33] font-semibold">
-              Faculty Contact:
-            </span>{" "}
-            Mr. Arghya Sikdar (Asst. Prof.) - 6294571233 <br />
+            <a
+              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+              className="hover:underline"
+            >
+              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
+              @transformation_srmus <br />
+              <span className="text-[#ffcc33] font-semibold"></span>
+            </a>
+            Faculty Contact: Mr. Arghya Sikdar (Asst. Prof.) - 6294571233 <br />
             <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
             <a
               href="https://srmus.ac.in"
               className="underline text-[#ffcc33] hover:text-white transition"
               target="_blank"
             >
-              SRM University
+              SRM University Sikkim
             </a>
           </p>
           <p className="text-gray-400 text-[11px] sm:text-xs">
