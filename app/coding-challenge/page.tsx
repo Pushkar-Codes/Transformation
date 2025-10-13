@@ -57,10 +57,10 @@ export default function CodingChallange() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
-              className="w-full sm:w-auto px-6 py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-base sm:text-lg relative overflow-hidden transition-transform duration-300 hover:scale-105 text-center"
+              className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-sm sm:text-base md:text-lg relative overflow-hidden transition-transform duration-300 hover:scale-105"
             >
               <span className="relative z-10">Register Now</span>
               <span
@@ -69,10 +69,9 @@ export default function CodingChallange() {
               ></span>
             </Link>
 
-            {/* ✅ Smooth scroll button */}
             <button
               onClick={scrollToRules}
-              className="w-full sm:w-auto px-6 py-3 rounded-md bg-gradient-to-r from-fuchsia-500 to-pink-600 text-white font-bold text-base sm:text-lg shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-transform duration-300 hover:scale-105"
+              className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-gradient-to-r from-fuchsia-500 to-pink-600 text-white font-bold text-sm sm:text-base md:text-lg shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-transform duration-300 hover:scale-105"
             >
               View Rules
             </button>
@@ -80,7 +79,7 @@ export default function CodingChallange() {
         </div>
 
         {/* Coordinators Section */}
-        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-center shadow-[0_0_25px_rgba(236,72,153,0.3)]">
+        <div className="w-full max-w-2xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-center shadow-[0_0_25px_rgba(236,72,153,0.3)]">
           <h2 className="text-lg sm:text-xl font-bold text-pink-300 mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
@@ -104,13 +103,13 @@ export default function CodingChallange() {
         <div
           ref={rulesRef}
           style={{ scrollMarginTop: "100px" }}
-          className="w-full max-w-5xl mt-14 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-8 text-left shadow-[0_0_25px_rgba(236,72,153,0.3)] leading-relaxed text-pink-100"
+          className="w-full max-w-5xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-8 text-left shadow-[0_0_25px_rgba(236,72,153,0.3)] leading-relaxed text-pink-100"
         >
           <h2 className="text-xl sm:text-2xl font-bold text-pink-300 mb-4 text-center">
             Coding Competition Rules & Instructions
           </h2>
 
-          <p className="whitespace-pre-line text-xs sm:text-sm md:text-base">
+          <p className="whitespace-pre-line text-md sm:text-md md:text-base">
             {`1. Eligibility
 ● Open to all students from recognized institutions.
 ● Participants can register individually or in teams of 4.

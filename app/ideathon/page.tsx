@@ -17,16 +17,13 @@ export default function Ideathon() {
     <div className="relative min-h-screen px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-6 sm:py-8 bg-gradient-to-br from-purple-900 via-violet-800 to-pink-900 text-white font-sans overflow-hidden">
       {/* Navbar */}
       <Navbar />
-
       {/* Spacer for fixed navbar */}
       <div className="h-24 sm:h-28 md:h-32" />
-
       {/* Background Glow */}
       <div className="absolute top-[-20%] left-[-20%] w-[60vw] h-[60vw] max-w-[450px] max-h-[450px] bg-gradient-to-br from-purple-500 via-pink-500 to-fuchsia-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
       <div className="absolute bottom-[-20%] right-[-20%] w-[60vw] h-[60vw] max-w-[450px] max-h-[450px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
-
       {/* Main Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-2 sm:px-4 md:px-10 mt-10 sm:mt-16 space-y-10 w-full">
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-2  md:px-10 mt-10 sm:mt-16 space-y-10 w-full">
         <div className="w-full max-w-4xl flex flex-col items-center justify-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-2 sm:mb-4 break-words">
             IDEATHON
@@ -64,9 +61,9 @@ export default function Ideathon() {
               </span>
             </span>
             <span className="block font-medium mt-1">
-              Venue:{" "}
-              <span className="text-purple-300 font-semibold">
-                SRM University Main Block, 5th Mile, Room No: 405
+              Organized by{" "}
+              <span className="text-pink-400">
+                SRM University Sikkim, School of Information Technology
               </span>
             </span>
           </p>
@@ -99,7 +96,7 @@ export default function Ideathon() {
             Faculty Coordinator
           </h2>
           <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
-            Mr. SivaramaKumar P
+            Ms. Priyadarshini Pradhan (Asst. Prof.)
           </p>
 
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
@@ -125,7 +122,7 @@ export default function Ideathon() {
             RULES & REGULATIONS
           </h2>
 
-          <ol className="list-decimal list-inside text-white/90 space-y-3 text-sm sm:text-base">
+          <ol className="list-decimal list-inside text-white/90 space-y-3 text-md sm:text-base">
             <li>Teams of 2–5 members from each school can participate.</li>
             <li>
               Ideas must focus on technology-driven solutions for social impact.
@@ -153,10 +150,8 @@ export default function Ideathon() {
           </ol>
         </div>
       </main>
-
       {/* Footer */}
-
-      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
+      <footer className="mt-8 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
         <div className="max-w-4xl mx-auto space-y-3">
           <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
             CONTACT US
@@ -170,8 +165,8 @@ export default function Ideathon() {
               @transformation_srmus <br />
               <span className="text-[#ffcc33] font-semibold"></span>
             </a>
-            Faculty Contact: Mr. SivaramKumar P (Asst. Prof.) - 9940872949{" "}
-            <br />
+            Faculty Contact: Ms. Priyadarshini Pradhan (Asst. Prof.) -
+            7679435343 <br />
             <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
             <a
               href="https://srmus.ac.in"
