@@ -72,9 +72,9 @@ export default function InnovatorsExpo() {
               </span>
             </span>
             <span className="block font-medium mt-1">
-              Venue:{" "}
-              <span className="text-purple-300 font-semibold">
-                SRM University Main Block, 5th Mile, Room No: 404
+              Organized by{" "}
+              <span className="text-pink-400">
+                SRM University Sikkim, School of Information Technology
               </span>
             </span>
           </p>
@@ -102,12 +102,12 @@ export default function InnovatorsExpo() {
         </div>
 
         {/* Coordinator Section */}
-        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+        <div className="w-full max-w-2xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
           <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
-            Mr. SivaramaKumar P
+            Mr. SivaramaKumar P (Asst. Prof.)
           </p>
 
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
@@ -126,14 +126,14 @@ export default function InnovatorsExpo() {
         {/* Rules Section */}
         <div
           ref={rulesRef}
-          className="w-full max-w-3xl mt-20 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-left shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+          className="w-full max-w-3xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 sm:p-8 text-left shadow-[0_0_25px_rgba(255,255,255,0.3)]"
           style={{ scrollMarginTop: "100px" }}
         >
           <h2 className="text-xl sm:text-2xl font-bold text-purple-200 mb-4 text-center">
             RULES & REGULATIONS
           </h2>
 
-          <p className="text-white/90 mb-4 text-sm sm:text-base">
+          <p className="text-white/90 mb-4  sm:text-base">
             <strong>Event name:</strong> Young Innovator’s Expo
             <br />
             With the theme of Young Innovator’s Expo, which is certainly a great
@@ -149,7 +149,7 @@ export default function InnovatorsExpo() {
             and promoting self-dependence.
           </p>
 
-          <ol className="list-decimal list-inside text-white/90 space-y-2 mb-4 text-sm sm:text-base">
+          <ol className="list-decimal list-inside text-white/90 space-y-2 mb-4 sm:text-base">
             <li>Conducted for school students.</li>
             <li>Team size: 1 to 3 students.</li>
             <li>
@@ -172,13 +172,13 @@ export default function InnovatorsExpo() {
                   potential for commercialization (max 100 words).
                 </li>
               </ul>
-              <span className="block mt-1 text-white/80 text-xs sm:text-sm">
+              <span className="block mt-1 text-white/80 sm:text-sm">
                 Note: Single PDF file, max 10MB.
               </span>
             </li>
           </ol>
 
-          <p className="text-white/90 mb-4 font-medium text-sm sm:text-base">
+          <p className="text-white/90 mb-4 font-medium sm:text-base">
             <strong>After Qualifying:</strong> Selected teams move to final
             round. Jury chooses best prototypes for development.
           </p>
@@ -186,7 +186,7 @@ export default function InnovatorsExpo() {
           <p className="text-white/90 mb-4 font-medium text-sm sm:text-base">
             <strong>Final Round Presentation Submission Guidelines:</strong>
           </p>
-          <ol className="list-decimal list-inside text-white/90 space-y-2 text-sm sm:text-base">
+          <ol className="list-decimal list-inside text-white/90 space-y-2sm:text-base">
             <li>
               Submit solution/idea in MS PowerPoint (max 10 slides):
               <ul className="list-disc list-inside ml-6 mt-1 space-y-1">
@@ -201,9 +201,7 @@ export default function InnovatorsExpo() {
             </li>
             <li>
               Send entries to:{" "}
-              <span className="font-semibold">
-                transformation@srmus.edu.in
-              </span>
+              <span className="font-semibold">transformation@srmus.edu.in</span>
             </li>
             <li>Subject: ‘Young Innovator’s Expo’ followed by title.</li>
             <li>Teams present concept on scheduled event date.</li>
@@ -216,25 +214,33 @@ export default function InnovatorsExpo() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm md:text-base border-t border-white/10 backdrop-blur-sm text-white/80 relative z-10">
+      <footer className="mt-8 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
         <div className="max-w-4xl mx-auto space-y-3">
-          <h3 className="text-white font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+          <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
             CONTACT US
           </h3>
-          <p className="text-white/80 text-xs sm:text-sm md:text-base leading-relaxed">
-            <span className="font-semibold">Instagram:</span> @transformation_srmus <br />
-            <span className="font-semibold">Faculty Contact:</span> Mr. SivaramaKumar P - 9940872949 <br />
-            <span className="font-semibold">Website:</span>{" "}
+          <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
             <a
-              href="https://techfestsrmus.in"
-              className="underline text-white/80 hover:text-white transition"
+              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+              className="hover:underline"
+            >
+              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
+              @transformation_srmus <br />
+              <span className="text-[#ffcc33] font-semibold"></span>
+            </a>
+            Faculty Contact: Mr. SivaramaKumar P (Asst. Prof.) - 9940872949{" "}
+            <br />
+            <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
+            <a
+              href="https://srmus.ac.in"
+              className="underline text-[#ffcc33] hover:text-white transition"
               target="_blank"
             >
-              techfestsrmus.in
+              SRM University Sikkim
             </a>
           </p>
-          <p className="text-white/50 text-[11px] sm:text-[12px]">
-            © 2025 Transformation | SRM University Sikkim. All Rights Reserved.
+          <p className="text-gray-400 text-[11px] sm:text-xs">
+            © 2025 SRM University Sikkim. All rights reserved.
           </p>
         </div>
       </footer>

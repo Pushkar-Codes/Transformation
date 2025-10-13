@@ -32,16 +32,18 @@ export default function QuizShow() {
       {/* Main Section */}
       <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 lg:px-20 mt-16 space-y-10">
         <div className="max-w-4xl flex flex-col items-center justify-center">
-          <h1 className="text-4xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 whitespace-nowrap">
-            DIGITAL INDIA QUIZ SHOW ?
+          <h1 className="text-3xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 whitespace-nowrap">
+            DIGITAL INDIA <br /> QUIZ SHOW
           </h1>
 
-          <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-6">
+          <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-4">
             Be part of the exciting{" "}
-            <span className="font-semibold">Digital India Quiz Show</span>, a
-            fun and knowledge-packed challenge that celebrates India’s digital
-            transformation. Test your awareness of technology, innovation,
-            e-governance, and the nation’s digital journey.
+            <span className="font-semibold text-pink-400">
+              Digital India Quiz Show
+            </span>
+            , a fun and knowledge-packed challenge that celebrates India’s
+            Digital transformation. Test your awareness of technology,
+            innovation, e-governance, and the nation’s digital journey.
           </p>
 
           <p className="text-white/80 mt-3 text-base max-w-2xl mx-auto">
@@ -65,9 +67,9 @@ export default function QuizShow() {
               </span>
             </span>
             <span className="block font-medium mt-1">
-              Venue:{" "}
-              <span className="text-purple-300 font-semibold">
-                SRMUS Main Block, 5th Mile, Tadong, Gangtok
+              Organized by{" "}
+              <span className="text-pink-400">
+                SRM University Sikkim, School of Information Technology
               </span>
             </span>
           </p>
@@ -95,12 +97,12 @@ export default function QuizShow() {
         </div>
 
         {/* Coordinator Section */}
-        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+        <div className="w-full max-w-2xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
           <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
-            Mrs. Hema Malini S
+            Ms. Hema Malini S (Asst. Prof.)
           </p>
 
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
@@ -117,72 +119,74 @@ export default function QuizShow() {
         {/* Rules Section */}
         <div
           ref={rulesRef}
-          className="w-full max-w-3xl mt-16 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-left text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+          className="w-full max-w-3xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-left text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.3)]"
         >
           <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
             Quiz Competition Rules
           </h2>
 
-          <p className="mt-2 font-semibold text-sm sm:text-base">
+          <p className="mt-2 font-semibold sm:text-base">
             1. Eligibility & Team
           </p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">
+          <p className="ml-4 mt-1  sm:text-base">
             • Total 4 members in one team
           </p>
 
-          <p className="mt-4 font-semibold text-sm sm:text-base">2. Rounds</p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">• Total 3 Rounds</p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">
+          <p className="mt-4 font-semibold sm:text-base">2. Rounds</p>
+          <p className="ml-4 mt-1 sm:text-base">• Total 3 Rounds</p>
+          <p className="ml-4 mt-1  sm:text-base">
             • Each round has a fixed number of questions
           </p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">
+          <p className="ml-4 mt-1  sm:text-base">
             • Time limit per question 30-60 sec
           </p>
 
-          <p className="mt-4 font-semibold text-sm sm:text-base">
-            3. Answer System
-          </p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">
+          <p className="mt-4 font-semibold  sm:text-base">3. Answer System</p>
+          <p className="ml-4 mt-1  sm:text-base">
             • Round 1: Oral Questions – one team at a time
           </p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">
-            • Round 2: Picture Quiz
-          </p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">
+          <p className="ml-4 mt-1  sm:text-base">• Round 2: Picture Quiz</p>
+          <p className="ml-4 mt-1  sm:text-base">
             • Round 3: Rapid fire round – 5 to 8 questions. Press Buzzer fast
             for Answer.
           </p>
 
-          <p className="mt-4 font-semibold text-sm sm:text-base">4. Points</p>
+          <p className="mt-4 font-semibold  sm:text-base">4. Points</p>
           <p className="ml-4 mt-1 text-sm sm:text-base">
             • +10 points for Right Answer
           </p>
-          <p className="ml-4 mt-1 text-sm sm:text-base">• 0 points for wrong</p>
+          <p className="ml-4 mt-1  sm:text-base">• 0 points for wrong</p>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm md:text-base border-t border-white/10 backdrop-blur-sm text-white/80 relative z-10">
+      <footer className="mt-8 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
         <div className="max-w-4xl mx-auto space-y-3">
-          <h3 className="text-white font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+          <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
             CONTACT US
           </h3>
-          <p className="text-white/80 text-sm leading-relaxed">
-            <span className="font-semibold">Instagram:</span>{" "}
-            @transformation_srmus <br />
-            <span className="font-semibold">Faculty Contact:</span> Mrs. Hema
-            Malini S (Asst. Prof.) - 9566976122 <br />
-            <span className="font-semibold">Website:</span>{" "}
+          <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
             <a
-              href="https://techfestsrmus.in"
-              className="underline text-white/80 hover:text-white transition"
+              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+              className="hover:underline"
+            >
+              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
+              @transformation_srmus <br />
+              <span className="text-[#ffcc33] font-semibold"></span>
+            </a>
+            Faculty Contact: Mrs. Hema Malini S (Asst. Prof.) - 9566976122{" "}
+            <br />
+            <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
+            <a
+              href="https://srmus.ac.in"
+              className="underline text-[#ffcc33] hover:text-white transition"
               target="_blank"
             >
-              techfestsrmus.in
+              SRM University Sikkim
             </a>
           </p>
-          <p className="text-white/50 text-[11px] sm:text-[12px]">
-            © 2025 Transformation | SRM University Sikkim. All Rights Reserved.
+          <p className="text-gray-400 text-[11px] sm:text-xs">
+            © 2025 SRM University Sikkim. All rights reserved.
           </p>
         </div>
       </footer>

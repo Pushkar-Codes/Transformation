@@ -30,10 +30,10 @@ export default function TechTreasureHunt() {
       <div className="absolute bottom-[-20%] right-[-20%] w-[60vw] h-[60vw] max-w-[450px] max-h-[450px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
 
       {/* Main Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-2 sm:px-4 md:px-10 mt-10 sm:mt-16 space-y-10 w-full">
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-2 sm:px-4 md:px-10 mt-16 sm:mt-16 space-y-10 w-full">
         <div className="w-full max-w-4xl flex flex-col items-center justify-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 break-words">
-            TECH TREASURE HUNT 🔎
+            TECH TREASURE HUNT
           </h1>
 
           <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-6">
@@ -58,9 +58,9 @@ export default function TechTreasureHunt() {
               </span>
             </span>
             <span className="block font-medium mt-1">
-              Venue:{" "}
-              <span className="text-purple-300 font-semibold">
-                SRMUS Main Block, 5th Mile, Tadong, Gangtok
+              Organized by{" "}
+              <span className="text-pink-400">
+                SRM University Sikkim, School of Information Technology
               </span>
             </span>
           </p>
@@ -88,12 +88,12 @@ export default function TechTreasureHunt() {
         </div>
 
         {/* Coordinator Section */}
-        <div className="w-full max-w-2xl mt-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+        <div className="w-full max-w-2xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
             Faculty Coordinator
           </h2>
           <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
-            Abhimanyu Sharma
+            Abhimanyu Sharma (Asst. Prof.)
           </p>
 
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
@@ -110,13 +110,13 @@ export default function TechTreasureHunt() {
         {/* Rules Section */}
         <div
           ref={rulesRef}
-          className="w-full max-w-3xl mt-16 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-left text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+          className="w-full max-w-3xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-left text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.3)]"
         >
           <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
             RULES & REGULATIONS
           </h2>
 
-          <ol className="list-decimal list-inside text-white/90 space-y-2 text-sm sm:text-base">
+          <ol className="list-decimal list-inside text-white/90 space-y-2 sm:text-base">
             <li>The hunt is open to registered participants only.</li>
             <li>Teams must consist of 1 to 3 members.</li>
             <li>Each team will receive the first clue at the start.</li>
@@ -133,27 +133,32 @@ export default function TechTreasureHunt() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 text-center py-6 px-4 text-xs sm:text-sm md:text-base border-t border-white/10 backdrop-blur-sm text-white/80 relative z-10">
+      <footer className="mt-8 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
         <div className="max-w-4xl mx-auto space-y-3">
-          <h3 className="text-white font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+          <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
             CONTACT US
           </h3>
-          <p className="text-white/80 text-sm leading-relaxed">
-            <span className="font-semibold">Email:</span> techfestsrmus.in{" "}
-            <br />
-            <span className="font-semibold">Contact:</span> Abhimanyu Sharma –
-            6297706073 <br />
-            <span className="font-semibold">Instagram:</span>{" "}
+          <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
             <a
-              href="https://instagram.com/transformation_srmus"
-              target="_blank"
-              className="underline text-white/80 hover:text-white transition"
+              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+              className="hover:underline"
             >
-              @transformation_srmus
+              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
+              @transformation_srmus <br />
+              <span className="text-[#ffcc33] font-semibold"></span>
+            </a>
+            Faculty Contact: Abhimanyu Sharma (Asst. Prof.) - 6397706073 <br />
+            <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
+            <a
+              href="https://srmus.ac.in"
+              className="underline text-[#ffcc33] hover:text-white transition"
+              target="_blank"
+            >
+              SRM University Sikkim
             </a>
           </p>
-          <p className="text-white/50 text-[11px] sm:text-[12px]">
-            © 2025 Transformation | SRM University Sikkim. All Rights Reserved.
+          <p className="text-gray-400 text-[11px] sm:text-xs">
+            © 2025 SRM University Sikkim. All rights reserved.
           </p>
         </div>
       </footer>
