@@ -50,51 +50,48 @@ export default function Page() {
 
       <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
-     {/* logo */}
-<div className="fixed flex flex-col lg:flex-row lg:space-x-10 lg:justify-between lg:items-center top-4 left-4 right-4 z-20 px-1 py-3 lg:px-12">
+      {/* logo */}
+      <div className="fixed flex flex-col lg:flex-row lg:space-x-10 lg:justify-between lg:items-center top-4 left-4 right-4 z-20 px-1 py-3 lg:px-12">
+        {/* SRM Logo */}
+        <div className="bg-white/90 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg mb-4 lg:mb-0">
+          <Image
+            src="/srmus-logo-full-length.png"
+            alt="SRM University Logo"
+            width={500}
+            height={120}
+            priority
+            quality={100}
+            className="h-8 lg:h-12 w-auto object-contain"
+          />
+        </div>
 
-  {/* SRM Logo */}
-  <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg mb-4 lg:mb-0">
-    <Image
-      src="/srmus-logo-full-length.png"
-      alt="SRM University Logo"
-      width={500}
-      height={120}
-      priority
-      quality={100}
-      className="h-8 lg:h-12 w-auto object-contain"
-    />
-  </div>
+        {/* IIC + NAAC Logos Container */}
+        <div className="flex items-center gap-3 lg:gap-6">
+          {/* IIC Logo */}
+          <div className="bg-white/90 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
+            <Image
+              src="/iic-logo.png"
+              alt="IIC Logo"
+              width={120}
+              height={120}
+              quality={100}
+              className="h-8 lg:h-12 w-auto object-contain rounded-lg"
+            />
+          </div>
 
-  {/* IIC + NAAC Logos Container */}
-  <div className="flex items-center justify-center gap-3 lg:gap-6">
-    {/* IIC Logo */}
-    <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
-      <Image
-        src="/iic-logo.png"
-        alt="IIC Logo"
-        width={120}
-        height={120}
-        quality={100}
-        className="h-8 lg:h-12 w-auto object-contain rounded-lg"
-      />
-    </div>
-
-    {/* NAAC Logo */}
-    <div className="bg-white/60 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
-      <Image
-        src="/NAAC_no_bg.png"
-        alt="NAAC Logo"
-        width={120}
-        height={120}
-        quality={100}
-        className="h-8 lg:h-12 w-auto object-contain rounded-lg"
-      />
-    </div>
-  </div>
-</div>
-
-
+          {/* NAAC Logo */}
+          <div className="bg-white/90 rounded-lg border border-white/30 p-2 lg:p-3 shadow-lg">
+            <Image
+              src="/NAAC_no_bg.png"
+              alt="NAAC Logo"
+              width={120}
+              height={120}
+              quality={100}
+              className="h-8 lg:h-12 w-auto object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      </div>
 
       <div className="relative z-10 -mt-[90px] leading-snug lg:mt-0 flex flex-col items-start text-left h-full justify-center max-w-full lg:max-w-3xl space-y-2.5 lg:space-y-3 px-1 lg:px-0">
         <div>
