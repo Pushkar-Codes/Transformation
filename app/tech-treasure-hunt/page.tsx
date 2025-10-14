@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Navbar from "@/components/navbar";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function TechTreasureHunt() {
@@ -10,156 +11,237 @@ export default function TechTreasureHunt() {
   const scrollToRules = () => {
     const el = rulesRef.current;
     if (el) {
-      window.scrollTo({
-        top: el.offsetTop - 100, // offset for navbar
-        behavior: "smooth",
-      });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
-    <div className="relative min-h-screen px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-6 sm:py-8 bg-gradient-to-br from-purple-900 via-violet-800 to-pink-900 text-white font-sans overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-purple-900 via-violet-800 to-pink-900 text-white font-sans overflow-hidden">
       {/* Navbar */}
       <Navbar />
+      <div className="h-40" />
 
-      {/* Spacer for fixed navbar */}
-      <div className="h-20 sm:h-24 md:h-28" />
-
-      {/* Background Glow */}
-      <div className="absolute top-[-20%] left-[-20%] w-[60vw] h-[60vw] max-w-[450px] max-h-[450px] bg-gradient-to-br from-purple-500 via-pink-500 to-fuchsia-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
-      <div className="absolute bottom-[-20%] right-[-20%] w-[60vw] h-[60vw] max-w-[450px] max-h-[450px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[180px] opacity-30 pointer-events-none z-0" />
+      {/* Background Glows */}
+      <div className="absolute top-[-100px] left-[-100px] w-[350px] h-[350px] bg-gradient-to-br from-purple-500 via-pink-500 to-fuchsia-600 rounded-full blur-[130px] opacity-30 pointer-events-none z-0" />
+      <div className="absolute bottom-[-100px] right-[-100px] w-[350px] h-[350px] bg-gradient-to-br from-fuchsia-500 via-pink-600 to-purple-600 rounded-full blur-[130px] opacity-30 pointer-events-none z-0" />
 
       {/* Main Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-2 sm:px-4 md:px-10 mt-16 sm:mt-16 space-y-10 w-full">
-        <div className="w-full max-w-4xl flex flex-col items-center justify-center">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] mb-4 break-words">
-            TECH TREASURE HUNT
-          </h1>
+      <main className="relative z-10 flex flex-col items-center mb-[150px] lg:mb-[100px] px-6 sm:px-8 space-y-10">
+        <div className="max-w-6xl w-full">
+          <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 lg:gap-12">
+            {/* Left Side: Text */}
+            <div className="flex flex-col lg:mt-0 -mt-[30px] lg:items-start lg:text-left">
+              <h1 className="text-md lg:text-2xl mt-0 mb-0 font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_20px_rgba(192,132,252,0.7)] leading-[1.05] will-change-transform-filter">
+                Transformation{" "}
+                <span className="text-xs lg:text-xl text-orange-500 font-semibold">
+                  2025
+                </span>
+              </h1>
 
-          <p className="text-lg lg:text-xl text-white/90 leading-relaxed mt-6">
-            Get ready to dive into a world where technology and adventure come
-            together. Decode the clues, race against time, and use your logic to
-            uncover the hidden digital treasure. Every challenge will test your
-            mind, your teamwork, and your curiosity. Only those who think fast
-            and stay sharp will make it to the end where the real reward awaits.
-          </p>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold uppercase tracking-widest text-white drop-shadow-[0_0_25px_rgba(236,72,153,0.8)] mb-4">
+                Tech Treasure Hunt
+              </h1>
 
-          <p className="text-white/80 mt-3 text-base max-w-2xl mx-auto">
-            Open to all curious minds school and college students are welcome to
-            compete, solve puzzles, and win exciting prizes.
-          </p>
+              <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
+                <span className="text-xl block">
+                  Welcome to the{" "}
+                  <span className="text-[#ffcc33] font-semibold">
+                    Tech Treasure Hunt
+                  </span>{" "}
+                  !
+                </span>
+                <span className="block mt-2 leading-tight">
+                  Decode clues, race against time, and uncover the hidden
+                  digital treasure. Test your logic, teamwork, and curiosity!
+                </span>
+                <span className="block font-medium mt-4">
+                  Date:{" "}
+                  <span className="text-purple-300">31st Oct | 01st Nov</span>
+                </span>
+                <span className="block font-medium mt-1">
+                  Organized by{" "}
+                  <span className="text-pink-400">
+                    SRM University Sikkim, School of Information Technology
+                  </span>
+                </span>
+              </p>
 
-          {/* Event Info Section */}
-          <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-8 px-2">
-            <span className="block font-medium mt-2">
-              Date:{" "}
-              <span className="text-purple-300 font-semibold">
-                31st Oct | 01st Nov, 2025
-              </span>
-            </span>
-            <span className="block font-medium mt-1">
-              Organized by{" "}
-              <span className="text-pink-400">
-                SRM University Sikkim, School of Information Technology
-              </span>
-            </span>
-          </p>
+              {/* Buttons */}
+              <div className="mt-8 flex flex-wrap lg:justify-start gap-3 sm:gap-4">
+                <Link
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
+                  className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-sm sm:text-base md:text-lg relative overflow-hidden transition-transform duration-300 hover:scale-105"
+                >
+                  <span className="relative z-10">Register Now</span>
+                  <span
+                    className="absolute inset-0 rounded-md bg-pink-500 blur-xl opacity-40 animate-pulse"
+                    aria-hidden="true"
+                  ></span>
+                </Link>
 
-          {/* Buttons */}
-          <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
-            <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfYeT-2EihlhuA6UCDdL-nxEOZh1VlcxOigulNjV3j0rVT6oA/viewform?usp=dialog"
-              className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-sm sm:text-base md:text-lg relative overflow-hidden transition-transform duration-300 hover:scale-105"
-            >
-              <span className="relative z-10">Register Now</span>
-              <span
-                className="absolute inset-0 rounded-md bg-pink-500 blur-xl opacity-40 animate-pulse"
-                aria-hidden="true"
-              ></span>
-            </Link>
+                <button
+                  onClick={scrollToRules}
+                  className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-gradient-to-r from-fuchsia-500 to-pink-600 text-white font-bold text-sm sm:text-base md:text-lg shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-transform duration-300 hover:scale-105"
+                >
+                  View Rules
+                </button>
+              </div>
+            </div>
 
-            <button
-              onClick={scrollToRules}
-              className="px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-md bg-gradient-to-r from-fuchsia-500 to-pink-600 text-white font-bold text-sm sm:text-base md:text-lg shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-transform duration-300 hover:scale-105"
-            >
-              View Rules
-            </button>
+            {/* Right Side: Image */}
+            <div className="lg:w-1/2">
+              <Image
+                src="/treasurehunt.png"
+                alt="Tech Treasure Hunt illustration"
+                width={1080}
+                height={830}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
 
-        {/* Coordinator Section */}
-        <div className="w-full max-w-2xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-center shadow-[0_0_25px_rgba(255,255,255,0.3)]">
-          <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
-            Faculty Coordinator
-          </h2>
-          <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
-            Abhimanyu Sharma (Asst. Prof.)
-          </p>
+        {/* Coordinators Section */}
+        <div className="w-full max-w-5xl mx-auto bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-[0_0_25px_rgba(236,72,153,0.3)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="p-6 sm:p-8">
+              <div className="flex space-x-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="rgba(244,114,182,1)"
+                >
+                  <path d="M8 4C8 5.10457 7.10457 6 6 6 4.89543 6 4 5.10457 4 4 4 2.89543 4.89543 2 6 2 7.10457 2 8 2.89543 8 4ZM5 16V22H3V10C3 8.34315 4.34315 7 6 7 6.82059 7 7.56423 7.32946 8.10585 7.86333L10.4803 10.1057 12.7931 7.79289 14.2073 9.20711 10.5201 12.8943 9 11.4587V22H7V16H5ZM6 9C5.44772 9 5 9.44772 5 10V14H7V10C7 9.44772 6.55228 9 6 9ZM19 5H10V3H20C20.5523 3 21 3.44772 21 4V15C21 15.5523 20.5523 16 20 16H16.5758L19.3993 22H17.1889L14.3654 16H10V14H19V5Z"></path>
+                </svg>
+                <h2 className="text-lg sm:text-xl font-bold text-pink-300 tracking-wide">
+                  Faculty Coordinator
+                </h2>
+              </div>
+              <p className="text-pink-100 mb-6 font-medium text-sm sm:text-base">
+                Abhimanyu Sharma (Asst. Prof.)
+              </p>
+              <h3 className="text-lg font-semibold text-pink-300">
+                Student Volunteers
+              </h3>
+              <ul className="list-disc list-inside text-pink-100 font-medium text-sm sm:text-base space-y-1">
+                <li>Roland Lepcha</li>
+                <li>Disha Rai</li>
+                <li>Jamyang</li>
+                <li>Sishir Rai</li>
+              </ul>
+            </div>
+            <div className="p-6 sm:p-8 border-t border-white/20 lg:border-t-0 lg:border-l">
+              <div className="flex space-x-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="rgba(255,204,51,1)"
+                >
+                  <path d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z"></path>
+                </svg>
+                <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
+                  CONTACT US
+                </h3>
+              </div>
 
-          <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
-            Student Volunteers
-          </h3>
-          <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 text-white/90 font-medium text-sm sm:text-base">
-            <li>Roland Lepcha</li>
-            <li>Disha Rai</li>
-            <li>Jamyang</li>
-            <li>Sishir Rai</li>
-          </ul>
+              <div className="mt-4 space-y-3 text-gray-200">
+                <p>
+                  <span className="text-[#ffcc33] font-semibold">
+                    Faculty Contact:
+                  </span>{" "}
+                  <br />
+                  Abhimanyu Sharma - 6397706073
+                </p>
+                <a
+                  href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
+                  className="hover:underline"
+                >
+                  Instagram: @transformation_srmus
+                </a>
+                <p>
+                  <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
+                  <a
+                    href="https://srmus.ac.in"
+                    className="underline text-[#ffcc33] hover:text-white transition"
+                    target="_blank"
+                  >
+                    SRM University Sikkim
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Rules Section */}
         <div
           ref={rulesRef}
-          className="w-full max-w-3xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-6 md:p-8 text-left text-white/90 shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+          style={{ scrollMarginTop: "100px" }}
+          className="w-full max-w-5xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-8 text-left shadow-[0_0_25px_rgba(236,72,153,0.3)] leading-relaxed text-pink-100"
         >
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
-            RULES & REGULATIONS
+          <h2 className="text-xl sm:text-2xl font-bold text-pink-300 mb-4">
+            Tech Treasure Hunt Rules & Instructions
           </h2>
 
-          <ol className="list-decimal list-inside text-white/90 space-y-2 sm:text-base">
-            <li>The hunt is open to registered participants only.</li>
-            <li>Teams must consist of 1 to 3 members.</li>
-            <li>Each team will receive the first clue at the start.</li>
-            <li>
-              Clues must be solved in the given sequence. Skipping or
-              rearranging is not allowed.
-            </li>
-            <li>
-              The treasure is hidden within the defined boundaries. No team may
-              go outside the designated area.
-            </li>
-          </ol>
+          <div className="text-md sm:text-md md:text-base leading-relaxed space-y-4">
+            <div>
+              <strong>1. Eligibility</strong>
+              <ul className="list-disc ml-6 mt-2">
+                <li>Open to all students from recognized schools and colleges.</li>
+                <li>Teams can consist of 1 to 3 members.</li>
+                <li>Each participant must register individually or as a team.</li>
+              </ul>
+            </div>
+
+            <div>
+              <strong>2. Rules</strong>
+              <ol className="list-decimal ml-6 mt-2 space-y-1">
+                <li>The hunt is open only to registered participants.</li>
+                <li>Teams must follow the sequence of clues; skipping is not allowed.</li>
+                <li>The treasure must be found within the designated boundaries.</li>
+                <li>Participants must maintain fair play and integrity.</li>
+              </ol>
+            </div>
+
+            <div>
+              <strong>3. Prizes</strong>
+              <ul className="list-disc ml-6 mt-2">
+                <li>Certificates for all participants.</li>
+                <li>Exciting prizes for winners and runners-up.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="mt-8 text-center py-6 px-4 text-xs sm:text-sm border-t border-white/10 backdrop-blur-sm text-gray-100 relative z-10">
-        <div className="max-w-4xl mx-auto space-y-3">
-          <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
-            CONTACT US
-          </h3>
-          <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
-            <a
-              href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
-              className="hover:underline"
-            >
-              <span className="text-[#ffcc33] font-semibold">Instagram:</span>{" "}
-              @transformation_srmus <br />
-              <span className="text-[#ffcc33] font-semibold"></span>
-            </a>
-            Faculty Contact: Abhimanyu Sharma (Asst. Prof.) - 6397706073 <br />
-            <span className="text-[#ffcc33] font-semibold">Website:</span>{" "}
-            <a
-              href="https://srmus.ac.in"
-              className="underline text-[#ffcc33] hover:text-white transition"
-              target="_blank"
-            >
-              SRM University Sikkim
-            </a>
-          </p>
-          <p className="text-gray-400 text-[11px] sm:text-xs">
-            © 2025 SRM University Sikkim. All rights reserved.
-          </p>
+      <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm px-4 lg:px-24 py-4 text-xs lg:text-sm border-t border-white/10 z-10">
+        <div className="flex flex-col-reverse items-center gap-4 lg:flex-row lg:justify-between">
+          <div>© 2025 SRM University Sikkim. All rights reserved.</div>
+          <div className="flex flex-col items-center gap-3 lg:flex-row lg:gap-6">
+            <Link href="/" className="hover:underline">
+              <div className="flex items-center space-x-1.5">
+                <svg
+                  xmlns="http://www.w.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM12 15C10.6193 15 9.5 13.8807 9.5 12.5C9.5 11.1193 10.6193 9.99998 12 9.99998C13.3807 9.99998 14.5 11.1193 14.5 12.5C14.5 13.8807 13.3807 15 12 15Z"></path>
+                </svg>
+                <p>Home</p>
+              </div>
+            </Link>
+            <Link href="/rules-regulation" className="hover:underline">
+              Rules & Regulation
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
