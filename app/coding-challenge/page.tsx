@@ -255,7 +255,7 @@ export default function CodingChallange() {
 
             <div>
               <strong>3. Rules</strong>
-              <ol className="list-decimal ml-6 mt-2 space-y-1">
+              <ul className="list-disc ml-6 mt-2">
                 <li>
                   Original Work Only – Plagiarism, copying code, or external
                   help is strictly prohibited.
@@ -284,7 +284,7 @@ export default function CodingChallange() {
                   Judges’ Decision Final – Any dispute will be resolved by the
                   organizing committee.
                 </li>
-              </ol>
+              </ul>
             </div>
 
             <div>

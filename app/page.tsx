@@ -116,7 +116,7 @@ export default function Page() {
 
         <p className="text-md lg:text-2xl font-semibold leading-snug">
           Organised by{" "}
-          <span className="text-white">School of Information & Technology</span>
+          <span className="text-white">School of Information Technology</span>
         </p>
 
         <div className="flex space-x-2 justify-center items-center">
