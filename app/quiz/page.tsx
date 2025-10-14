@@ -35,6 +35,10 @@ export default function QuizShow() {
                 DIGITAL INDIA <br /> QUIZ SHOW
               </h1>
 
+              <span className="text-[#ffcc33] font-semibold">
+                Viksit Sikkim To Viksit Bharat <br /> <br />
+              </span>
+
               <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4">
                 Be part of the exciting{" "}
                 <span className="font-semibold text-pink-400">
@@ -46,9 +50,9 @@ export default function QuizShow() {
               </p>
 
               <p className="text-white/80 mt-3 text-base max-w-2xl">
-                Open to all curious minds and quiz lovers compete, learn, and win
-                amazing prizes while exploring the spirit of a smarter, digital
-                India.
+                Open to all curious minds and quiz lovers  compete, learn, and
+                win amazing prizes while exploring the spirit of a smarter,
+                digital India.
               </p>
 
               {/* Event Info Section */}
@@ -95,8 +99,7 @@ export default function QuizShow() {
               </div>
             </div>
 
-
-            {/* Right Side: Image Placeholder */}
+            {/* Right Side Image */}
             <div className="lg:w-1/2">
               <Image
                 src="/quiz.png"
@@ -110,23 +113,34 @@ export default function QuizShow() {
           </div>
         </div>
 
-        {/* Coordinators + Contact Section */}
-        <div className="w-full max-w-5xl mx-auto bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-[0_0_25px_rgba(236,72,153,0.3)]">
+         <div className="w-full max-w-5xl mx-auto bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-[0_0_25px_rgba(236,72,153,0.3)]">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="p-6 sm:p-8 text-center">
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-wide">
-                Faculty Coordinator
-              </h2>
-              <p className="text-white/90 mb-6 font-medium text-sm sm:text-base">
-                Ms. Hema Malini S (Asst. Prof.)
+            <div className="p-6 sm:p-8">
+              <div className="flex space-x-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="rgba(244,114,182,1)"
+                >
+                  <path d="M8 4C8 5.10457 7.10457 6 6 6 4.89543 6 4 5.10457 4 4 4 2.89543 4.89543 2 6 2 7.10457 2 8 2.89543 8 4ZM5 16V22H3V10C3 8.34315 4.34315 7 6 7 6.82059 7 7.56423 7.32946 8.10585 7.86333L10.4803 10.1057 12.7931 7.79289 14.2073 9.20711 10.5201 12.8943 9 11.4587V22H7V16H5ZM6 9C5.44772 9 5 9.44772 5 10V14H7V10C7 9.44772 6.55228 9 6 9ZM19 5H10V3H20C20.5523 3 21 3.44772 21 4V15C21 15.5523 20.5523 16 20 16H16.5758L19.3993 22H17.1889L14.3654 16H10V14H19V5Z"></path>
+                </svg>
+                <h2 className="text-lg sm:text-xl font-bold text-pink-300 tracking-wide">
+                  Faculty Coordinator
+                </h2>
+              </div>
+
+              <p className="text-pink-100 mb-6 font-medium text-sm sm:text-base">
+                Ms. Hema Malini S  (Asst. Prof.)
               </p>
 
-              <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
+              <h3 className="text-lg font-semibold text-pink-300">
                 Student Volunteers
               </h3>
-              <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 text-white/90 font-medium text-sm sm:text-base">
+              <ul className="list-disc list-inside text-pink-100 font-medium text-sm sm:text-base space-y-1">
                 <li>Adarsh Adhikari</li>
-                <li>Kala Sharma</li>
+                <li> Kala Sharma</li>
                 <li>Rosan Rai</li>
                 <li>Aditi Biswakarma</li>
               </ul>
@@ -136,9 +150,14 @@ export default function QuizShow() {
               <h3 className="text-[#ffcc33] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(255,204,51,0.6)]">
                 CONTACT US
               </h3>
-              <p className="mt-4 text-gray-200 text-sm sm:text-base leading-relaxed">
-                <span className="text-[#ffcc33] font-semibold">Faculty Contact:</span>{" "}
-                Ms. Hema Malini S - 9566976122 <br />
+              <div className="mt-4 text-gray-200 text-sm sm:text-base leading-relaxed space-y-2">
+                <p>
+                  <span className="text-[#ffcc33] font-semibold">
+                    Faculty Contact:
+                  </span>{" "}
+                  Ms. Hema Malini S - 9566976122
+                </p>
+
                 <a
                   href="https://www.instagram.com/transformation_srmus?igsh=MXNoczg3bGR6dHo4"
                   className="hover:underline"
@@ -163,7 +182,7 @@ export default function QuizShow() {
                 >
                   SRM University Sikkim
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -183,14 +202,14 @@ export default function QuizShow() {
             </li>
             <li>
               <strong>Rounds:</strong> Total 3 rounds. Each round has fixed
-              questions. Time limit per question: 30-60 sec.
+              questions. Time limit per question: 30–60 sec.
             </li>
             <li>
               <strong>Answer System:</strong>
               <ul className="list-disc list-inside ml-6 mt-1 space-y-1">
                 <li>Round 1: Oral Questions – one team at a time</li>
                 <li>Round 2: Picture Quiz</li>
-                <li>Round 3: Rapid Fire – 5-8 questions. Press buzzer fast.</li>
+                <li>Round 3: Rapid Fire – 5–8 questions. Press buzzer fast.</li>
               </ul>
             </li>
             <li>
@@ -200,8 +219,7 @@ export default function QuizShow() {
         </div>
       </main>
 
-
-       {/* Footer */}
+      {/* Footer */}
       <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm px-4 lg:px-24 py-4 text-xs lg:text-sm border-t border-white/10 z-10">
         <div className="flex flex-col-reverse items-center gap-4 lg:flex-row lg:justify-between">
           <div>© 2025 SRM University Sikkim. All rights reserved.</div>
@@ -210,7 +228,7 @@ export default function QuizShow() {
             <Link href="/" className="hover:underline">
               <div className="flex items-center space-x-1.5">
                 <svg
-                  xmlns="http://www.w.org/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width="18"
                   height="18"

@@ -42,6 +42,10 @@ export default function Ideathon() {
                 Ideathon
               </h1>
 
+              <span className=  "text-[#ffcc33] font-semibold">
+                  Viksit Sikkim To Viksit Bharat  <br /> <br /> 
+                </span>
+
               <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
                 <span className="text-xl block">
                   Welcome to the{" "}
@@ -130,11 +134,10 @@ export default function Ideathon() {
                 Student Volunteers
               </h3>
               <ul className="list-disc list-inside text-pink-100 font-medium text-sm sm:text-base space-y-1">
-                <li>Babin Bhattarai</li>
-                <li>Aashu Goutam</li>
-                <li>Roshan Sharma</li>
-                <li>Bikky Kumar</li>
-              </ul>
+                <li>Gitesh Panday</li>
+                <li>Madhav Bhandari</li>
+                
+              </ul> 
             </div>
 
             {/* Contact Us */}

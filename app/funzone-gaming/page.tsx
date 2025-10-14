@@ -44,6 +44,10 @@ export default function FunZoneGaming() {
                 FunZone Gaming
               </h1>
 
+              <span className=  "text-[#ffcc33] font-semibold">
+                  Viksit Sikkim To Viksit Bharat  <br /> <br /> 
+                </span>
+
               <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
                 <span className="text-xl block">
                   Step into the{" "}
@@ -52,8 +56,9 @@ export default function FunZoneGaming() {
                   </span>
                   !
                 </span>
+                
                 <span className="block mt-2 leading-tight">
-                  Where passion meets pixels — battle in{" "}
+                  Where passion meets pixels battle in{" "}
                   <span className="font-semibold text-pink-300">FIFA (PS5)</span> and{" "}
                   <span className="font-semibold text-pink-300">Mobile Legends</span>{" "}
                   to prove who’s the ultimate gamer!
