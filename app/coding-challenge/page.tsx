@@ -43,18 +43,30 @@ export default function CodingChallange() {
                 Coding Challenge
               </h1>
 
+              <span className=  "text-[#ffcc33] font-semibold">
+                  Viksit Sikkim To Viksit Bharat  <br /> <br /> 
+                </span>
+              
+
               <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
                 <span className=" text-xl block">
-                  Welcome to the{" "}
-                  <span className="text-[#ffcc33] font-semibold">
-                    Coding Challenge
+                 
+                  Welcome to the{" "} 
+                  
+                   <span className="text-[#ffcc33] font-semibold">
+                    Coding Challenge   
+                   
                   </span>
-                  !
+                 
                 </span>
+                
+
                 <span className="block mt-2 leading-tight">
                   Test your programming skills, solve exciting problems, and
                   compete with coders worldwide!
                 </span>
+
+
                 <span className="block font-medium mt-4">
                   Date:{" "}
                   <span className="text-purple-300">31st Oct | 01st Nov</span>

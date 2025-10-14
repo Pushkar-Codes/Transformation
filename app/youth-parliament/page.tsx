@@ -43,6 +43,10 @@ export default function YouthParliament() {
                 Viksit Bharat <br /> Youth Parliament
               </h1>
 
+              <span className=  "text-[#ffcc33] font-semibold">
+                  Viksit Sikkim To Viksit Bharat  <br /> <br /> 
+                </span>
+
               <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
                 <span className="block text-xl">
                   Step into the shoes of a{" "}
@@ -131,14 +135,15 @@ export default function YouthParliament() {
                 Student Volunteers
               </h3>
               <ul className="list-disc list-inside text-pink-100 font-medium text-sm sm:text-base space-y-1">
-                <li>Biswaraj Aley</li>
-                <li>Anita Rai</li>
-                <li>Md Ali</li>
-                <li>Ayush Sherpa</li>
-                <li>Anita Rai</li>
-                <li>Manish Chettri</li>
-                <li>Sishir Rai</li>
-                <li>Aarya Niroula</li>
+              <li>Biswaraj Aley</li> 
+              <li>Anita Rai</li>
+              <li>Aarya Niroula</li>
+              <li>Md Ali</li>
+              <li>Ayush Sherpa</li>
+              <li>Anita Rai</li>
+              <li>Manish Chettri</li>
+              <li>Sishir Rai</li>
+                
               </ul>
             </div>
 
@@ -189,48 +194,140 @@ export default function YouthParliament() {
         </div>
 
         {/* Rules Section */}
-        <div
-          ref={rulesRef}
-          style={{ scrollMarginTop: "100px" }}
-          className="w-full max-w-5xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-8 text-left shadow-[0_0_25px_rgba(236,72,153,0.3)] leading-relaxed text-pink-100"
-        >
-          <h2 className="text-xl sm:text-2xl font-bold text-pink-300 mb-4 text-center">
-            Rules & Procedure – Lok Sabha Model
-          </h2>
 
-          <p className="mt-2 font-semibold">1. General Structure</p>
-          <ul className="list-disc ml-6 space-y-1">
-            <li>Model followed: Lok Sabha (Lower House of Parliament).</li>
-            <li>Total duration: ~90 minutes, 50 participants.</li>
-            <li>
-              Debate Motion Example: “AI will create more jobs than it destroys in India.”
-            </li>
-          </ul>
+<div
+  ref={rulesRef}
+  style={{ scrollMarginTop: "100px" }}
+  className="w-full max-w-5xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-8 text-left shadow-[0_0_25px_rgba(236,72,153,0.3)] leading-relaxed text-pink-100"
+>
+  <h2 className="text-xl sm:text-2xl font-bold text-pink-300 mb-4 text-center">
+    Rules &amp; Procedure – Lok Sabha Model
+  </h2>
 
-          <p className="mt-4 font-semibold">2. Roles</p>
-          <ul className="list-disc ml-6 space-y-1">
-            <li>Speaker – Presides over session.</li>
-            <li>Prime Minister – Moves the motion.</li>
-            <li>Leader of Opposition – Counters the motion.</li>
-            <li>Ministers, MPs, Neutral members – Debate & question.</li>
-          </ul>
+  <p className="mt-2 font-semibold text-center">Theme: Empowring Viksit Bharat 2047 through Technology, Innovation, and Digital Inclusion</p>
 
-          <p className="mt-4 font-semibold">3. Etiquette</p>
-          <ul className="list-disc ml-6 space-y-1">
-            <li>Address as “Hon’ble Speaker Sir/Madam”.</li>
-            <li>No personal remarks or clapping – only desk thumping.</li>
-            <li>Respect time and Speaker’s authority.</li>
-          </ul>
+  <p className="mt-2 text-center">
+    <span className="text-pink-300 font-semibold">Note:</span> Border Topic is "Technology in Day to Day Life"
+  </p>
 
-          <p className="mt-4 font-semibold">4. Evaluation</p>
-          <ul className="list-disc ml-6 space-y-1">
-            <li>Content – 40%</li>
-            <li>Delivery – 20%</li>
-            <li>Language – 20%</li>
-            <li>Time Discipline – 10%</li>
-            <li>Decorum – 10%</li>
-          </ul>
-        </div>
+  <p className="mt-4 font-semibold">1. General Structure of the Session</p>
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Model followed: Lok Sabha (Lower House of Parliament).</li>
+    <li>Total duration: 28 minutes per session.</li>
+    <li>Participants: 5 participants from each school.</li>
+    <li>
+      Motion for debate: One motion/resolution selected in advance (e.g., The bill discussion on “AI will create more jobs than it destroys in India”).
+    </li>
+    <li>Presiding Officer: The Speaker of the House (by default will be provided from organisation).</li>
+  </ul>
+
+  <p className="mt-4 font-semibold">2. Roles in the Session</p>
+
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Speaker (1 student) – Presides, maintains order, allocates time, conducts voting.</li>
+  </ul>
+
+  {/* Ruling Side */}
+  <h3 className="text-lg font-bold text-pink-300 mt-6">Ruling Side</h3>
+  <ul className="ml-8 space-y-1 mt-2">
+    <li>→ Prime Minister (1 student) – Moves the motion.</li>
+    <li>→ Ruling MPs (3 students) – Support the motion.</li>
+    <li>→ Whip (1 student) – Summarizes points and gives conclusionary statement.</li>
+  </ul>
+
+  {/* Opposition Side */}
+  <h3 className="text-lg font-bold text-pink-300 mt-6">Opposition Side</h3>
+  <ul className="ml-8 space-y-1 mt-2">
+    <li>→ Leader of Opposition (1 student) – Leads Opposition, opposes motion.</li>
+    <li>→ Opposition MPs (3 students) – Argue against the motion.</li>
+    <li>→ Whip (1 student) – Summarizes points and gives conclusionary statement.</li>
+  </ul>
+
+  <p className="mt-6 font-semibold">3. Parliamentary Language &amp; Etiquette</p>
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Address Chair as “Hon’ble Speaker Sir/Madam”.</li>
+    <li>Refer to each other as “Hon’ble Member”, not by name.</li>
+    <li>Desk thumping for approval; no clapping.</li>
+    <li>No personal remarks or unparliamentary language.</li>
+    <li>All speeches start with “Hon’ble Speaker Sir/ma’am, I rise to…”</li>
+  </ul>
+
+  <p className="mt-4 font-semibold">4. Order of Proceedings (Round by Round)</p>
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Opening Round (2 min): Speaker opens House &amp; announces motion.</li>
+    <li>
+      Govt &amp; Opposition Main Speeches (14 min total – 7 minutes each side): Alternate speeches between Govt &amp; Opposition MPs.
+    </li>
+    <li>
+      Question Hour (5 min): Each side MPs can ask questions to their rival side regarding the “main speech”.
+    </li>
+  </ul>
+
+  <div className="mt-3 bg-pink-500/20 border border-pink-400/30 rounded-lg p-3 text-sm text-pink-100 shadow-[0_0_10px_rgba(236,72,153,0.3)]">
+    <span className="font-semibold text-pink-300">Note:</span> Ruling side will get to ask the question first prior to the opposition side.
+  </div>
+
+  <ul className="list-disc ml-6 space-y-1 mt-3">
+    <li>
+      Audience interaction (5 min): Audience can ask questions to particular MPs regarding their main speeches and question hour.
+    </li>
+    <li>Closing statement (2 min): Speaker summarizes and closes the House.</li>
+  </ul>
+
+  <p className="mt-4 font-semibold">5. Time Management (28 minutes total)</p>
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Opening: 2 min</li>
+    <li>Govt + Opposition speeches: 14 min</li>
+  </ul>
+
+  {/* Ruling Side Time */}
+  <h3 className="text-lg font-bold text-pink-300 mt-4">Ruling Side</h3>
+  <ul className="ml-8 space-y-1">
+    <li>→ Prime Minister: 2 min</li>
+    <li>→ MPs: (1+1+1) min</li>
+    <li>→ Whip: 2 min</li>
+  </ul>
+
+  {/* Opposition Side Time */}
+  <h3 className="text-lg font-bold text-pink-300 mt-4">Opposition Side</h3>
+  <ul className="ml-8 space-y-1">
+    <li>→ Leader of Opposition: 2 min</li>
+    <li>→ MPs: (1+1+1) min</li>
+    <li>→ Whip: 2 min</li>
+  </ul>
+
+  <ul className="list-disc ml-6 space-y-1 mt-3">
+    <li>Question Hour: 5 min</li>
+    <li>Audience Interaction: 5 min</li>
+    <li>Closing: 2 min (by Speaker)</li>
+  </ul>
+
+  <p className="mt-4 font-semibold">
+    6. Standard Rules of Conduct (per MoPA Youth Parliament Guidelines)
+  </p>
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Speaking Time Limit: Participants should strictly follow the time limit for positive marking.</li>
+    <li>Use Proper Titles: Address as “Hon’ble Speaker Sir/Madam”.</li>
+    <li>Decorum: No clapping, shouting, unparliamentary language; desk thumping allowed.</li>
+    <li>No Personal Remarks: Debate focuses on issues, not individuals.</li>
+    <li>Speaker’s Authority: Final decision, can cut short speeches or move to vote.</li>
+  </ul>
+
+  <p className="mt-4 font-semibold">7. Dress Code</p>
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Traditional / Formal attire.</li>
+  </ul>
+
+  <p className="mt-4 text-center">
+    On the basis of total marks, the winner will be decided.
+    <br />
+     <span className="text-pink-300 font-semibold">Note:</span> Judges’ decision will remain final.
+  </p>
+</div>
+
+
+
+
       </main>
 
       {/* Footer */}

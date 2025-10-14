@@ -42,6 +42,10 @@ export default function InnovatorsExpo() {
                 Young Innovator&apos;s Expo
               </h1>
 
+              <span className=  "text-[#ffcc33] font-semibold">
+                  Viksit Sikkim To Viksit Bharat  <br /> <br /> 
+                </span>
+
               <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
                 <span className="text-xl block">
                   Welcome to the{" "}
