@@ -94,8 +94,17 @@ export default function Page() {
       </div>
 
       <div className="relative z-10 -mt-[90px] leading-snug lg:mt-0 flex flex-col items-start text-left h-full justify-center max-w-full lg:max-w-3xl space-y-2.5 lg:space-y-3 px-1 lg:px-0">
-        <div>
-          <p className="mb-0 pb-0 font-semibold text-xl text-orange-500 leading-none">
+        <div className="mt-3 lg:-mt-[80px] ">
+          <p className="text-xl lg:text-3xl leading-tight font-semibold">
+            School of Information Technology <br />
+            <span className="text-white/90 font-medium ">
+              (Approved by AICTE)
+            </span>
+          </p>
+        </div>
+
+        <div className="mt-4">
+          <p className="mb-0 pb-0 font-semibold text-xs lg:text-xl text-orange-500 leading-none">
             2025
           </p>
 
@@ -107,17 +116,17 @@ export default function Page() {
     text-white
     drop-shadow-[0_0_20px_rgba(192,132,252,0.7)]
     leading-[1.05]
-    will-change-transform-filter /* <-- ADD THIS CLASS */
+    will-change-transform-filter 
   "
           >
             TRANSFORMATION
           </h1>
+          <p className="text-md mt-2 text-white lg:text-2xl font-semibold leading-snug">
+            Our Flagship <span className="text-orange-500">Tech Fest</span>{" "}
+            <br />
+            Empowering Youth For Viksit Bharat 2047
+          </p>
         </div>
-
-        <p className="text-md lg:text-2xl font-semibold leading-snug">
-          Organised by{" "}
-          <span className="text-white">School of Information & Technology</span>
-        </p>
 
         <div className="flex space-x-2 justify-center items-center">
           <a href="https://srmus.ac.in" className="hover:underline">

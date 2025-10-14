@@ -7,7 +7,6 @@ export default function DemoAnimation(element: HTMLElement | null) {
 
   const timeline = gsap.timeline({ delay: 1 });
 
-  // animate the paragraph above the title
   if (container) {
     const paragraph = container.querySelector("p");
     if (paragraph) {
@@ -19,7 +18,6 @@ export default function DemoAnimation(element: HTMLElement | null) {
     }
   }
 
-  // animation for the main title (h1)
   timeline.fromTo(
     element,
     {
@@ -48,7 +46,27 @@ export default function DemoAnimation(element: HTMLElement | null) {
     "-=0.4"
   );
 
-  // animating the following siblings here (sub-content below title)
+  const subTitle = element.nextElementSibling as HTMLElement | null;
+  if (subTitle && subTitle.tagName === "P") {
+    timeline.fromTo(
+      subTitle,
+      {
+        rotationX: -90,
+        autoAlpha: 0,
+        transformPerspective: 600,
+        filter: "blur(5px)",
+      },
+      {
+        rotationX: 0,
+        autoAlpha: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "back.out(1.7)",
+      },
+      "-=0.8"
+    );
+  }
+
   if (container) {
     const siblings: HTMLElement[] = [];
     let next = container.nextElementSibling as HTMLElement | null;
@@ -83,7 +101,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
     delay: 2.2,
   });
 
-  // GSAP hover effects for event list links
+  // GSAP hover effects
   eventListLinks.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       gsap.to(item, {
@@ -134,7 +152,7 @@ export const animateHamburger = (
       topPath,
       {
         rotate: 45,
-        y: 6, // Adjust this value based on SVG viewbox/size
+        y: 6,
         transformOrigin: "center center",
         duration: 0.3,
       },
@@ -152,7 +170,7 @@ export const animateHamburger = (
         bottomPath,
         {
           rotate: -45,
-          y: -6, // Adjust this value based on SVG viewbox/size
+          y: -6,
           transformOrigin: "center center",
           duration: 0.3,
         },
@@ -166,7 +184,6 @@ export const animateHamburger = (
       ease: "power3.inOut",
     });
 
-    // Animate "X" back to hamburger icon
     tl.to(
       topPath,
       {
