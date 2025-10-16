@@ -45,7 +45,7 @@ export default function FunZoneGaming() {
               </h1>
 
               <span className=  "text-[#ffcc33] font-semibold">
-                  Viksit Sikkim To Viksit Bharat  <br /> <br /> 
+                  Viksit Sikkim Se Viksit Bharat @2047<br /> <br /> 
                 </span>
 
               <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
@@ -142,12 +142,11 @@ export default function FunZoneGaming() {
               <ul className="list-disc list-inside text-pink-100 font-medium text-sm sm:text-base space-y-1">
                 <li>Nim Tshering Sherpa</li>
                 <li>Kalzang Namgyal Bhutia</li>
-                <li>Zigdel Bhutia</li>
-                <li>Bikky Kumar</li>
-                <li>Niket Kumar</li>
-                <li>Susang</li>
-                <li>Rikden Sangdup Bhutia</li>
+                <li>Senrey Sierer Momin</li>
+                <li>Rikden Sangdup Bhutia </li>
+                <li>Noorie Tamang</li>
                 <li>Omshe Hang Subba</li>
+                <li>Zigdel Bhutia</li>
               </ul>
             </div>
 
@@ -212,44 +211,84 @@ export default function FunZoneGaming() {
         </div>
 
         {/* Rules Section */}
-        <div
-          ref={rulesRef}
-          style={{ scrollMarginTop: "100px" }}
-          className="w-full max-w-5xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-8 text-left shadow-[0_0_25px_rgba(236,72,153,0.3)] leading-relaxed text-pink-100"
-        >
-          <h2 className="text-xl sm:text-2xl font-bold text-pink-300 mb-4">
-            FunZone Gaming Rules & Instructions
-          </h2>
+<div
+  ref={rulesRef}
+  style={{ scrollMarginTop: "100px" }}
+  className="w-full max-w-5xl mt-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 sm:p-8 text-left shadow-[0_0_25px_rgba(236,72,153,0.3)] leading-relaxed text-pink-100"
+>
+  <h2 className="text-xl sm:text-2xl font-bold text-pink-300 mb-4">
+    FunZone Games & Tournament Rules
+  </h2>
 
-          <ul className="list-disc ml-6 space-y-2">
-            <li>Participants must register before the deadline.</li>
-            <li>Bring your college ID card for verification.</li>
-            <li>Games included: FIFA (PS5) and Mobile Legends (Mobile).</li>
-            <li>Solo and team participation allowed (max 4 members per team).</li>
-            <li>Any unfair means will result in disqualification.</li>
-            <li>Decisions by the organizing committee will be final.</li>
-          </ul>
-        </div>
+  <h3 className="text-lg sm:text-xl font-semibold text-pink-200 mt-6 mb-2">
+    Tournament Rules & Guidelines
+  </h3>
+
+  {/* FIFA 23 Section */}
+  <div className="mt-4">
+    <h4 className="text-lg font-semibold text-pink-300 mb-2">
+      1. FIFA 23 (PS5)
+    </h4>
+    <p className="text-pink-100 font-semibold mb-1 underline">Format</p>
+    <ul className="list-none space-y-1">
+      <li>→ 16 Players</li>
+      <li>→ 2 PlayStations (PS5), 2 players per console</li>
+      <li>→ Knockout (Single Elimination)</li>
+    </ul>
+
+    <p className="text-pink-100 font-semibold mt-3 mb-1 underline">Rules</p>
+    <ul className="list-none space-y-1">
+      <li>→ Match Duration: 10 mins (knockouts), 20 mins (final).</li>
+      <li>→ Tie Breaker: Extra Time → Penalty Shootout.</li>
+      <li>→ Team Selection: Any official in-game team.</li>
+      <li>→ Controller: Own or provided.</li>
+      <li>→ Conduct: Fair play required, unfair means = disqualification.</li>
+      <li>→ Fixture Flow: Round of 16 → Quarterfinals → Semifinals → Final.</li>
+    </ul>
+  </div>
+
+  {/* Mobile Legends Section */}
+  <div className="mt-6">
+    <h4 className="text-lg font-semibold text-pink-300 mb-2">
+      2. Mobile Legends: Bang Bang (MLBB)
+    </h4>
+    <p className="text-pink-100 font-semibold mb-1 underline">Format</p>
+    <ul className="list-none space-y-1">
+      <li>→ 10 Teams (1 team per college)</li>
+      <li>→ Team: 5 players + 1 substitute</li>
+      <li>→ Knockout (Single Elimination)</li>
+    </ul>
+
+    <p className="text-pink-100 font-semibold mt-3 mb-1 underline">Rules</p>
+    <ul className="list-none space-y-1">
+      <li>
+        → Match Type: Best of 1 (knockouts), Final (Best of 3/5 – as decided).
+      </li>
+      <li>→ Mode: Draft Pick.</li>
+      <li>→ Devices: Bring own mobile phones & headphones.</li>
+      <li>→ Conduct: Cheating or delay = disqualification.</li>
+      <li>→ Substitutes: Allowed only after matches.</li>
+      <li>→ Fixture Flow: Round of 10 → Quarterfinals → Semifinals → Final.</li>
+    </ul>
+  </div>
+
+  {/* General Guidelines */}
+  <div className="mt-6">
+    <h4 className="text-lg font-semibold text-pink-300 mb-2 underline">
+      General Guidelines (Both Games)
+    </h4>
+    <ul className="list-none space-y-1">
+      <li>→ Registration is compulsory.</li>
+      <li>→ Report on time, late entries not allowed.</li>
+      <li>→ Organizer’s decision is final.</li>
+    </ul>
+  </div>
+</div>
+
+
       </main>
 
-      {/* Footer */}
-      <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm px-4 lg:px-24 py-4 text-xs lg:text-sm border-t border-white/10 z-10">
-        <div className="flex flex-col-reverse items-center gap-4 lg:flex-row lg:justify-between">
-          <div>© 2025 SRM University Sikkim. All rights reserved.</div>
-
-          <div className="flex flex-col items-center gap-3 lg:flex-row lg:gap-6">
-            <Link href="/" className="hover:underline">
-              Home
-            </Link>
-            <Link href="/rules-regulation" className="hover:underline">
-              Rules & Regulation
-            </Link>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+      
 
 {/* Footer */}
       <footer className="absolute bottom-0 left-0 w-full backdrop-blur-sm px-4 lg:px-24 py-4 text-xs lg:text-sm border-t border-white/10 z-10">
@@ -260,13 +299,13 @@ export default function FunZoneGaming() {
             <Link href="/" className="hover:underline">
               <div className="flex items-center space-x-1.5">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="http://www.w.org/2000/svg"
                   viewBox="0 0 24 24"
                   width="18"
                   height="18"
                   fill="currentColor"
                 >
-                  <path d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21Z"></path>
+                  <path d="M19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20C20 20.5523 19.5523 21 19 21ZM6 19H18V9.15745L12 3.7029L6 9.15745V19ZM12 15C10.6193 15 9.5 13.8807 9.5 12.5C9.5 11.1193 10.6193 9.99998 12 9.99998C13.3807 9.99998 14.5 11.1193 14.5 12.5C14.5 13.8807 13.3807 15 12 15Z"></path>
                 </svg>
                 <p>Home</p>
               </div>
@@ -278,3 +317,6 @@ export default function FunZoneGaming() {
         </div>
       </footer>
   
+</div>
+  );
+}

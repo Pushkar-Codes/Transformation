@@ -43,7 +43,7 @@ export default function TechTreasureHunt() {
               </h1>
 
               <span className=  "text-[#ffcc33] font-semibold">
-                  Viksit Sikkim To Viksit Bharat  <br /> <br /> 
+                  Viksit Sikkim Se Viksit Bharat @2047 <br /> <br /> 
                 </span>
 
               <p className="text-base sm:text-lg md:text-xl text-pink-100 leading-relaxed">
@@ -128,7 +128,7 @@ export default function TechTreasureHunt() {
                 Abhimanyu Sharma (Asst. Prof.)
               </p>
               <h3 className="text-lg font-semibold text-pink-300">
-                Student Volunteers
+                Student Volunteers  
               </h3>
               <ul className="list-disc list-inside text-pink-100 font-medium text-sm sm:text-base space-y-1">
                 <li>Roland Lepcha</li>
