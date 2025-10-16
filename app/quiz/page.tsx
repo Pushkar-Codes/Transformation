@@ -36,7 +36,7 @@ export default function QuizShow() {
               </h1>
 
               <span className="text-[#ffcc33] font-semibold">
-                Viksit Sikkim To Viksit Bharat <br /> <br />
+                Viksit Sikkim Se Viksit Bharat @2047 <br /> <br />
               </span>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mt-4">
