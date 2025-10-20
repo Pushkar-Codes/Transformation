@@ -7,6 +7,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
 
   const timeline = gsap.timeline({ delay: 1 });
 
+  // Animate the date
   if (container) {
     const paragraph = container.querySelector("p");
     if (paragraph) {
@@ -18,6 +19,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
     }
   }
 
+  // Animate the H1 ("TRANSFORMATION")
   timeline.fromTo(
     element,
     {
@@ -33,7 +35,7 @@ export default function DemoAnimation(element: HTMLElement | null) {
       duration: 1,
       ease: "back.out(1.7)",
       onComplete: () => {
-        // infinite pulse animation of glow
+        // Infinite pulse animation of glow
         gsap.to(element, {
           filter: "blur(0px) drop-shadow(0 0 10px rgba(192,132,252,0.8))",
           duration: 1.5,
@@ -43,9 +45,10 @@ export default function DemoAnimation(element: HTMLElement | null) {
         });
       },
     },
-    "-=0.4"
+    "-=0.4" // Overlap with previous animation
   );
 
+  // Animate the Subtitle ("Our Flagship Tech Fest...")
   const subTitle = element.nextElementSibling as HTMLElement | null;
   if (subTitle && subTitle.tagName === "P") {
     timeline.fromTo(
@@ -63,10 +66,11 @@ export default function DemoAnimation(element: HTMLElement | null) {
         duration: 1,
         ease: "back.out(1.7)",
       },
-      "-=0.8"
+      "-=0.8" // Overlap
     );
   }
 
+  // Animate the links (SRM, Instagram) and Register button
   if (container) {
     const siblings: HTMLElement[] = [];
     let next = container.nextElementSibling as HTMLElement | null;
@@ -74,6 +78,10 @@ export default function DemoAnimation(element: HTMLElement | null) {
       siblings.push(next);
       next = next.nextElementSibling as HTMLElement | null;
     }
+    // Set initial state for siblings
+    gsap.set(siblings, { y: 20, autoAlpha: 0 });
+
+    // Animate siblings
     timeline.to(
       siblings,
       {
@@ -83,52 +91,54 @@ export default function DemoAnimation(element: HTMLElement | null) {
         stagger: 0.1,
         ease: "power2.out",
       },
-      "-=0.7"
+      "-=0.7" // Overlap
     );
   }
 
-  // event stack
+  // --- UPDATED EVENT LIST ANIMATION ---
+
+  // Select all event links from the correct container
   const eventListLinks = document.querySelectorAll(
-    ".absolute.bottom-14 a, .absolute.lg\\:bottom-18 a"
-  );
-  gsap.set(eventListLinks, { x: -50, autoAlpha: 0 });
+    "div[class*='absolute right-3'] a"
+  ) as NodeListOf<HTMLElement>;
+
+  // Set initial state (off-screen to the right and invisible)
+  gsap.set(eventListLinks, { x: 50, autoAlpha: 0 });
+
+  // Animate them in
   gsap.to(eventListLinks, {
     x: 0,
-    autoAlpha: 0.9,
+    autoAlpha: 0.9, // Use the 0.9 opacity from your Tailwind class
     duration: 0.6,
     stagger: 0.1,
     ease: "power3.out",
-    delay: 2.2,
+    delay: 2.2, // Delay until after the main hero animation
   });
 
-  // GSAP hover effects
+  // --- UPDATED HOVER EFFECTS ---
+
+  // Add cleaner GSAP hover effects
   eventListLinks.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       gsap.to(item, {
-        scale: 1.1,
-        x: 10,
+        scale: 1.05,
+        x: -5, // Move slightly left
         duration: 0.2,
         ease: "power1.out",
-        boxShadow: "0px 10px 20px rgba(192, 132, 252, 0.6)",
-        zIndex: 20,
-        position: "relative",
       });
     });
     item.addEventListener("mouseleave", () => {
       gsap.to(item, {
         scale: 1,
-        x: 0,
+        x: 0, // Return to original position
         duration: 0.15,
         ease: "power1.inOut",
-        boxShadow: "none",
-        zIndex: 0,
-        position: "static",
       });
     });
   });
 }
 
-//menu
+// --- HAMBURGER MENU ANIMATION ---
 
 export const animateHamburger = (
   isOpen: boolean,
@@ -184,6 +194,7 @@ export const animateHamburger = (
       ease: "power3.inOut",
     });
 
+    // Animate "X" back to hamburger icon
     tl.to(
       topPath,
       {
